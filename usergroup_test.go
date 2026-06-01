@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -22,18 +22,18 @@ func TestUserGroupGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.UserGroups.Get(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.UserGroupGetParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.UserGroupGetParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -50,21 +50,21 @@ func TestUserGroupUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.UserGroups.Update(
 		context.TODO(),
 		"1",
-		emceesprodtesting5.UserGroupUpdateParams{
+		firefly.UserGroupUpdateParams{
 			Title:               "New user group title",
-			PrimaryCurrencyCode: emceesprodtesting5.String("EUR"),
-			PrimaryCurrencyID:   emceesprodtesting5.String("1"),
-			XTraceID:            emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			PrimaryCurrencyCode: firefly.String("EUR"),
+			PrimaryCurrencyID:   firefly.String("1"),
+			XTraceID:            firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -81,16 +81,16 @@ func TestUserGroupListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.UserGroups.List(context.TODO(), emceesprodtesting5.UserGroupListParams{
-		Limit:    emceesprodtesting5.Int(10),
-		Page:     emceesprodtesting5.Int(1),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.UserGroups.List(context.TODO(), firefly.UserGroupListParams{
+		Limit:    firefly.Int(10),
+		Page:     firefly.Int(1),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

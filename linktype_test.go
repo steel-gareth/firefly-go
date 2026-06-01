@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,19 +23,19 @@ func TestLinkTypeNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.LinkTypes.New(context.TODO(), emceesprodtesting5.LinkTypeNewParams{
-		LinkType: emceesprodtesting5.LinkTypeParam{
+	_, err := client.LinkTypes.New(context.TODO(), firefly.LinkTypeNewParams{
+		LinkType: firefly.LinkTypeParam{
 			Inward:  "is (partially) paid for by",
 			Name:    "Paid",
 			Outward: "(partially) pays for",
 		},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -52,18 +52,18 @@ func TestLinkTypeGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.LinkTypes.Get(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.LinkTypeGetParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.LinkTypeGetParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -80,21 +80,21 @@ func TestLinkTypeUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.LinkTypes.Update(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.LinkTypeUpdateParams{
-			Inward:   emceesprodtesting5.String("is (partially) paid for by"),
-			Name:     emceesprodtesting5.String("Paid"),
-			Outward:  emceesprodtesting5.String("(partially) pays for"),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.LinkTypeUpdateParams{
+			Inward:   firefly.String("is (partially) paid for by"),
+			Name:     firefly.String("Paid"),
+			Outward:  firefly.String("(partially) pays for"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -111,16 +111,16 @@ func TestLinkTypeListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.LinkTypes.List(context.TODO(), emceesprodtesting5.LinkTypeListParams{
-		Limit:    emceesprodtesting5.Int(10),
-		Page:     emceesprodtesting5.Int(1),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.LinkTypes.List(context.TODO(), firefly.LinkTypeListParams{
+		Limit:    firefly.Int(10),
+		Page:     firefly.Int(1),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -137,18 +137,18 @@ func TestLinkTypeDeleteWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.LinkTypes.Delete(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.LinkTypeDeleteParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.LinkTypeDeleteParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -165,23 +165,23 @@ func TestLinkTypeListTransactionsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.LinkTypes.ListTransactions(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.LinkTypeListTransactionsParams{
-			End:      emceesprodtesting5.Time(time.Now()),
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			Start:    emceesprodtesting5.Time(time.Now()),
-			Type:     emceesprodtesting5.TransactionTypeFilterAll,
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.LinkTypeListTransactionsParams{
+			End:      firefly.Time(time.Now()),
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			Start:    firefly.Time(time.Now()),
+			Type:     firefly.TransactionTypeFilterAll,
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

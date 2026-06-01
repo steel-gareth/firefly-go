@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,17 +23,17 @@ func TestInsightExpenseGetTotalWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.GetTotal(context.TODO(), emceesprodtesting5.InsightExpenseGetTotalParams{
+	_, err := client.Insight.Expense.GetTotal(context.TODO(), firefly.InsightExpenseGetTotalParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -50,17 +50,17 @@ func TestInsightExpenseListByAssetAccountWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.ListByAssetAccount(context.TODO(), emceesprodtesting5.InsightExpenseListByAssetAccountParams{
+	_, err := client.Insight.Expense.ListByAssetAccount(context.TODO(), firefly.InsightExpenseListByAssetAccountParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -77,18 +77,18 @@ func TestInsightExpenseListByBillWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.ListByBill(context.TODO(), emceesprodtesting5.InsightExpenseListByBillParams{
+	_, err := client.Insight.Expense.ListByBill(context.TODO(), firefly.InsightExpenseListByBillParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
 		Bills:    []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -105,18 +105,18 @@ func TestInsightExpenseListByBudgetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.ListByBudget(context.TODO(), emceesprodtesting5.InsightExpenseListByBudgetParams{
+	_, err := client.Insight.Expense.ListByBudget(context.TODO(), firefly.InsightExpenseListByBudgetParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
 		Budgets:  []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -133,18 +133,18 @@ func TestInsightExpenseListByCategoryWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.ListByCategory(context.TODO(), emceesprodtesting5.InsightExpenseListByCategoryParams{
+	_, err := client.Insight.Expense.ListByCategory(context.TODO(), firefly.InsightExpenseListByCategoryParams{
 		End:        time.Now(),
 		Start:      time.Now(),
 		Accounts:   []int64{1, 2, 3},
 		Categories: []int64{1, 2, 3},
-		XTraceID:   emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID:   firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -161,17 +161,17 @@ func TestInsightExpenseListByExpenseAccountWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.ListByExpenseAccount(context.TODO(), emceesprodtesting5.InsightExpenseListByExpenseAccountParams{
+	_, err := client.Insight.Expense.ListByExpenseAccount(context.TODO(), firefly.InsightExpenseListByExpenseAccountParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -188,18 +188,18 @@ func TestInsightExpenseListByTagWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.ListByTag(context.TODO(), emceesprodtesting5.InsightExpenseListByTagParams{
+	_, err := client.Insight.Expense.ListByTag(context.TODO(), firefly.InsightExpenseListByTagParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
 		Tags:     []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -216,17 +216,17 @@ func TestInsightExpenseListWithoutBillWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.ListWithoutBill(context.TODO(), emceesprodtesting5.InsightExpenseListWithoutBillParams{
+	_, err := client.Insight.Expense.ListWithoutBill(context.TODO(), firefly.InsightExpenseListWithoutBillParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -243,17 +243,17 @@ func TestInsightExpenseListWithoutBudgetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.ListWithoutBudget(context.TODO(), emceesprodtesting5.InsightExpenseListWithoutBudgetParams{
+	_, err := client.Insight.Expense.ListWithoutBudget(context.TODO(), firefly.InsightExpenseListWithoutBudgetParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -270,17 +270,17 @@ func TestInsightExpenseListWithoutCategoryWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.ListWithoutCategory(context.TODO(), emceesprodtesting5.InsightExpenseListWithoutCategoryParams{
+	_, err := client.Insight.Expense.ListWithoutCategory(context.TODO(), firefly.InsightExpenseListWithoutCategoryParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -297,17 +297,17 @@ func TestInsightExpenseListWithoutTagWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Expense.ListWithoutTag(context.TODO(), emceesprodtesting5.InsightExpenseListWithoutTagParams{
+	_, err := client.Insight.Expense.ListWithoutTag(context.TODO(), firefly.InsightExpenseListWithoutTagParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

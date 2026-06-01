@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,45 +23,45 @@ func TestRecurrenceNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Recurrences.New(context.TODO(), emceesprodtesting5.RecurrenceNewParams{
+	_, err := client.Recurrences.New(context.TODO(), firefly.RecurrenceNewParams{
 		FirstDate:   time.Now(),
-		RepeatUntil: emceesprodtesting5.Time(time.Now()),
-		Repetitions: []emceesprodtesting5.RecurrenceNewParamsRepetition{{
+		RepeatUntil: firefly.Time(time.Now()),
+		Repetitions: []firefly.RecurrenceNewParamsRepetition{{
 			Moment:  "3",
-			Type:    emceesprodtesting5.RecurrenceRepetitionTypeWeekly,
-			Skip:    emceesprodtesting5.Int(0),
-			Weekend: emceesprodtesting5.Int(1),
+			Type:    firefly.RecurrenceRepetitionTypeWeekly,
+			Skip:    firefly.Int(0),
+			Weekend: firefly.Int(1),
 		}},
 		Title: "Rent",
-		Transactions: []emceesprodtesting5.RecurrenceNewParamsTransaction{{
+		Transactions: []firefly.RecurrenceNewParamsTransaction{{
 			Amount:              "123.45",
 			Description:         "Rent for the current month",
 			DestinationID:       "258",
 			SourceID:            "913",
-			BillID:              emceesprodtesting5.String("123"),
-			BudgetID:            emceesprodtesting5.String("4"),
-			CategoryID:          emceesprodtesting5.String("211"),
-			CurrencyCode:        emceesprodtesting5.String("EUR"),
-			CurrencyID:          emceesprodtesting5.String("3"),
-			ForeignAmount:       emceesprodtesting5.String("123.45"),
-			ForeignCurrencyCode: emceesprodtesting5.String("GBP"),
-			ForeignCurrencyID:   emceesprodtesting5.String("17"),
-			PiggyBankID:         emceesprodtesting5.String("123"),
+			BillID:              firefly.String("123"),
+			BudgetID:            firefly.String("4"),
+			CategoryID:          firefly.String("211"),
+			CurrencyCode:        firefly.String("EUR"),
+			CurrencyID:          firefly.String("3"),
+			ForeignAmount:       firefly.String("123.45"),
+			ForeignCurrencyCode: firefly.String("GBP"),
+			ForeignCurrencyID:   firefly.String("17"),
+			PiggyBankID:         firefly.String("123"),
 			Tags:                []string{"Barbecue preparation"},
 		}},
-		Type:            emceesprodtesting5.RecurrenceTransactionTypeWithdrawal,
-		Active:          emceesprodtesting5.Bool(true),
-		ApplyRules:      emceesprodtesting5.Bool(true),
-		Description:     emceesprodtesting5.String("Recurring transaction for the monthly rent"),
-		Notes:           emceesprodtesting5.String("Some notes"),
-		NrOfRepetitions: emceesprodtesting5.Int(5),
-		XTraceID:        emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		Type:            firefly.RecurrenceTransactionTypeWithdrawal,
+		Active:          firefly.Bool(true),
+		ApplyRules:      firefly.Bool(true),
+		Description:     firefly.String("Recurring transaction for the monthly rent"),
+		Notes:           firefly.String("Some notes"),
+		NrOfRepetitions: firefly.Int(5),
+		XTraceID:        firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -78,18 +78,18 @@ func TestRecurrenceGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Recurrences.Get(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.RecurrenceGetParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.RecurrenceGetParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -106,48 +106,48 @@ func TestRecurrenceUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Recurrences.Update(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.RecurrenceUpdateParams{
-			Active:          emceesprodtesting5.Bool(true),
-			ApplyRules:      emceesprodtesting5.Bool(true),
-			Description:     emceesprodtesting5.String("Recurring transaction for the monthly rent"),
-			FirstDate:       emceesprodtesting5.Time(time.Now()),
-			Notes:           emceesprodtesting5.String("Some notes"),
-			NrOfRepetitions: emceesprodtesting5.Int(5),
-			RepeatUntil:     emceesprodtesting5.Time(time.Now()),
-			Repetitions: []emceesprodtesting5.RecurrenceUpdateParamsRepetition{{
-				Moment:  emceesprodtesting5.String("3"),
-				Skip:    emceesprodtesting5.Int(0),
-				Type:    emceesprodtesting5.RecurrenceRepetitionTypeWeekly,
-				Weekend: emceesprodtesting5.Int(1),
+		firefly.RecurrenceUpdateParams{
+			Active:          firefly.Bool(true),
+			ApplyRules:      firefly.Bool(true),
+			Description:     firefly.String("Recurring transaction for the monthly rent"),
+			FirstDate:       firefly.Time(time.Now()),
+			Notes:           firefly.String("Some notes"),
+			NrOfRepetitions: firefly.Int(5),
+			RepeatUntil:     firefly.Time(time.Now()),
+			Repetitions: []firefly.RecurrenceUpdateParamsRepetition{{
+				Moment:  firefly.String("3"),
+				Skip:    firefly.Int(0),
+				Type:    firefly.RecurrenceRepetitionTypeWeekly,
+				Weekend: firefly.Int(1),
 			}},
-			Title: emceesprodtesting5.String("Rent"),
-			Transactions: []emceesprodtesting5.RecurrenceUpdateParamsTransaction{{
+			Title: firefly.String("Rent"),
+			Transactions: []firefly.RecurrenceUpdateParamsTransaction{{
 				ID:                "ID of the recurring transaction. Not to be confused with the ID of the recurrence itself. Is marked as REQUIRED but can be skipped when there is only ONE transaction.",
-				Amount:            emceesprodtesting5.String("123.45"),
-				BillID:            emceesprodtesting5.String("123"),
-				BudgetID:          emceesprodtesting5.String("4"),
-				CategoryID:        emceesprodtesting5.String("211"),
-				CurrencyCode:      emceesprodtesting5.String("EUR"),
-				CurrencyID:        emceesprodtesting5.String("3"),
-				Description:       emceesprodtesting5.String("Rent for the current month"),
-				DestinationID:     emceesprodtesting5.String("258"),
-				ForeignAmount:     emceesprodtesting5.String("123.45"),
-				ForeignCurrencyID: emceesprodtesting5.String("17"),
-				PiggyBankID:       emceesprodtesting5.String("123"),
-				SourceID:          emceesprodtesting5.String("913"),
+				Amount:            firefly.String("123.45"),
+				BillID:            firefly.String("123"),
+				BudgetID:          firefly.String("4"),
+				CategoryID:        firefly.String("211"),
+				CurrencyCode:      firefly.String("EUR"),
+				CurrencyID:        firefly.String("3"),
+				Description:       firefly.String("Rent for the current month"),
+				DestinationID:     firefly.String("258"),
+				ForeignAmount:     firefly.String("123.45"),
+				ForeignCurrencyID: firefly.String("17"),
+				PiggyBankID:       firefly.String("123"),
+				SourceID:          firefly.String("913"),
 				Tags:              []string{"Barbecue preparation"},
 			}},
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -164,16 +164,16 @@ func TestRecurrenceListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Recurrences.List(context.TODO(), emceesprodtesting5.RecurrenceListParams{
-		Limit:    emceesprodtesting5.Int(10),
-		Page:     emceesprodtesting5.Int(1),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Recurrences.List(context.TODO(), firefly.RecurrenceListParams{
+		Limit:    firefly.Int(10),
+		Page:     firefly.Int(1),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -190,18 +190,18 @@ func TestRecurrenceDeleteWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Recurrences.Delete(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.RecurrenceDeleteParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.RecurrenceDeleteParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -218,23 +218,23 @@ func TestRecurrenceListTransactionsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Recurrences.ListTransactions(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.RecurrenceListTransactionsParams{
-			End:      emceesprodtesting5.Time(time.Now()),
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			Start:    emceesprodtesting5.Time(time.Now()),
-			Type:     emceesprodtesting5.TransactionTypeFilterAll,
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.RecurrenceListTransactionsParams{
+			End:      firefly.Time(time.Now()),
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			Start:    firefly.Time(time.Now()),
+			Type:     firefly.TransactionTypeFilterAll,
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -251,19 +251,19 @@ func TestRecurrenceTriggerTransactionWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Recurrences.TriggerTransaction(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.RecurrenceTriggerTransactionParams{
+		firefly.RecurrenceTriggerTransactionParams{
 			Date:     time.Now(),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

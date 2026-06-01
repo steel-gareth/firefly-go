@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,17 +23,17 @@ func TestInsightIncomeGetTotalWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Income.GetTotal(context.TODO(), emceesprodtesting5.InsightIncomeGetTotalParams{
+	_, err := client.Insight.Income.GetTotal(context.TODO(), firefly.InsightIncomeGetTotalParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -50,17 +50,17 @@ func TestInsightIncomeListByAssetAccountWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Income.ListByAssetAccount(context.TODO(), emceesprodtesting5.InsightIncomeListByAssetAccountParams{
+	_, err := client.Insight.Income.ListByAssetAccount(context.TODO(), firefly.InsightIncomeListByAssetAccountParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -77,18 +77,18 @@ func TestInsightIncomeListByCategoryWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Income.ListByCategory(context.TODO(), emceesprodtesting5.InsightIncomeListByCategoryParams{
+	_, err := client.Insight.Income.ListByCategory(context.TODO(), firefly.InsightIncomeListByCategoryParams{
 		End:        time.Now(),
 		Start:      time.Now(),
 		Accounts:   []int64{1, 2, 3},
 		Categories: []int64{1, 2, 3},
-		XTraceID:   emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID:   firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -105,17 +105,17 @@ func TestInsightIncomeListByRevenueAccountWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Income.ListByRevenueAccount(context.TODO(), emceesprodtesting5.InsightIncomeListByRevenueAccountParams{
+	_, err := client.Insight.Income.ListByRevenueAccount(context.TODO(), firefly.InsightIncomeListByRevenueAccountParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -132,18 +132,18 @@ func TestInsightIncomeListByTagWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Income.ListByTag(context.TODO(), emceesprodtesting5.InsightIncomeListByTagParams{
+	_, err := client.Insight.Income.ListByTag(context.TODO(), firefly.InsightIncomeListByTagParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
 		Tags:     []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -160,17 +160,17 @@ func TestInsightIncomeListWithoutCategoryWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Income.ListWithoutCategory(context.TODO(), emceesprodtesting5.InsightIncomeListWithoutCategoryParams{
+	_, err := client.Insight.Income.ListWithoutCategory(context.TODO(), firefly.InsightIncomeListWithoutCategoryParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -187,17 +187,17 @@ func TestInsightIncomeListWithoutTagWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Income.ListWithoutTag(context.TODO(), emceesprodtesting5.InsightIncomeListWithoutTagParams{
+	_, err := client.Insight.Income.ListWithoutTag(context.TODO(), firefly.InsightIncomeListWithoutTagParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

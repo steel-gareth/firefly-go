@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,20 +23,20 @@ func TestCurrencyNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Currencies.New(context.TODO(), emceesprodtesting5.CurrencyNewParams{
+	_, err := client.Currencies.New(context.TODO(), firefly.CurrencyNewParams{
 		Code:          "AMS",
 		Name:          "Ankh-Morpork dollar",
 		Symbol:        "AM$",
-		DecimalPlaces: emceesprodtesting5.Int(2),
-		Enabled:       emceesprodtesting5.Bool(true),
-		Primary:       emceesprodtesting5.Bool(true),
-		XTraceID:      emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		DecimalPlaces: firefly.Int(2),
+		Enabled:       firefly.Bool(true),
+		Primary:       firefly.Bool(true),
+		XTraceID:      firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -53,18 +53,18 @@ func TestCurrencyGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.Get(
 		context.TODO(),
 		"USD",
-		emceesprodtesting5.CurrencyGetParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyGetParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -81,24 +81,24 @@ func TestCurrencyUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.Update(
 		context.TODO(),
 		"EUR",
-		emceesprodtesting5.CurrencyUpdateParams{
-			Code:          emceesprodtesting5.String("AMS"),
-			DecimalPlaces: emceesprodtesting5.Int(2),
-			Enabled:       emceesprodtesting5.Bool(true),
-			Name:          emceesprodtesting5.String("Ankh-Morpork dollar"),
+		firefly.CurrencyUpdateParams{
+			Code:          firefly.String("AMS"),
+			DecimalPlaces: firefly.Int(2),
+			Enabled:       firefly.Bool(true),
+			Name:          firefly.String("Ankh-Morpork dollar"),
 			Primary:       true,
-			Symbol:        emceesprodtesting5.String("AM$"),
-			XTraceID:      emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			Symbol:        firefly.String("AM$"),
+			XTraceID:      firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -115,16 +115,16 @@ func TestCurrencyListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Currencies.List(context.TODO(), emceesprodtesting5.CurrencyListParams{
-		Limit:    emceesprodtesting5.Int(10),
-		Page:     emceesprodtesting5.Int(1),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Currencies.List(context.TODO(), firefly.CurrencyListParams{
+		Limit:    firefly.Int(10),
+		Page:     firefly.Int(1),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -141,18 +141,18 @@ func TestCurrencyDeleteWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Currencies.Delete(
 		context.TODO(),
 		"GBP",
-		emceesprodtesting5.CurrencyDeleteParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyDeleteParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -169,18 +169,18 @@ func TestCurrencyDisableWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.Disable(
 		context.TODO(),
 		"GBP",
-		emceesprodtesting5.CurrencyDisableParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyDisableParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -197,18 +197,18 @@ func TestCurrencyEnableWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.Enable(
 		context.TODO(),
 		"USD",
-		emceesprodtesting5.CurrencyEnableParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyEnableParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -225,22 +225,22 @@ func TestCurrencyListAccountsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.ListAccounts(
 		context.TODO(),
 		"USD",
-		emceesprodtesting5.CurrencyListAccountsParams{
-			Date:     emceesprodtesting5.Time(time.Now()),
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			Type:     emceesprodtesting5.AccountTypeFilterAll,
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyListAccountsParams{
+			Date:     firefly.Time(time.Now()),
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			Type:     firefly.AccountTypeFilterAll,
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -257,20 +257,20 @@ func TestCurrencyListAvailableBudgetsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.ListAvailableBudgets(
 		context.TODO(),
 		"EUR",
-		emceesprodtesting5.CurrencyListAvailableBudgetsParams{
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyListAvailableBudgetsParams{
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -287,20 +287,20 @@ func TestCurrencyListBillsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.ListBills(
 		context.TODO(),
 		"USD",
-		emceesprodtesting5.CurrencyListBillsParams{
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyListBillsParams{
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -317,22 +317,22 @@ func TestCurrencyListBudgetLimitsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.ListBudgetLimits(
 		context.TODO(),
 		"USD",
-		emceesprodtesting5.CurrencyListBudgetLimitsParams{
-			End:      emceesprodtesting5.Time(time.Now()),
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			Start:    emceesprodtesting5.Time(time.Now()),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyListBudgetLimitsParams{
+			End:      firefly.Time(time.Now()),
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			Start:    firefly.Time(time.Now()),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -349,20 +349,20 @@ func TestCurrencyListRecurrencesWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.ListRecurrences(
 		context.TODO(),
 		"EUR",
-		emceesprodtesting5.CurrencyListRecurrencesParams{
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyListRecurrencesParams{
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -379,20 +379,20 @@ func TestCurrencyListRulesWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.ListRules(
 		context.TODO(),
 		"USD",
-		emceesprodtesting5.CurrencyListRulesParams{
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyListRulesParams{
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -409,23 +409,23 @@ func TestCurrencyListTransactionsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Currencies.ListTransactions(
 		context.TODO(),
 		"USD",
-		emceesprodtesting5.CurrencyListTransactionsParams{
-			End:      emceesprodtesting5.Time(time.Now()),
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			Start:    emceesprodtesting5.Time(time.Now()),
-			Type:     emceesprodtesting5.TransactionTypeFilterAll,
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.CurrencyListTransactionsParams{
+			End:      firefly.Time(time.Now()),
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			Start:    firefly.Time(time.Now()),
+			Type:     firefly.TransactionTypeFilterAll,
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

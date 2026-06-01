@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5
+package firefly
 
 import (
 	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/apierror"

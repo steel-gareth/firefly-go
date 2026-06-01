@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"bytes"
@@ -23,15 +23,15 @@ func TestDataExportExportAccountsWithOptionalParams(t *testing.T) {
 	}))
 	defer server.Close()
 	baseURL := server.URL
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	resp, err := client.Data.Export.ExportAccounts(context.TODO(), emceesprodtesting5.DataExportExportAccountsParams{
-		Type:     emceesprodtesting5.ExportFileFilterCsv,
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	resp, err := client.Data.Export.ExportAccounts(context.TODO(), firefly.DataExportExportAccountsParams{
+		Type:     firefly.ExportFileFilterCsv,
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -41,7 +41,7 @@ func TestDataExportExportAccountsWithOptionalParams(t *testing.T) {
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -59,15 +59,15 @@ func TestDataExportExportBillsWithOptionalParams(t *testing.T) {
 	}))
 	defer server.Close()
 	baseURL := server.URL
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	resp, err := client.Data.Export.ExportBills(context.TODO(), emceesprodtesting5.DataExportExportBillsParams{
-		Type:     emceesprodtesting5.ExportFileFilterCsv,
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	resp, err := client.Data.Export.ExportBills(context.TODO(), firefly.DataExportExportBillsParams{
+		Type:     firefly.ExportFileFilterCsv,
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -77,7 +77,7 @@ func TestDataExportExportBillsWithOptionalParams(t *testing.T) {
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -95,15 +95,15 @@ func TestDataExportExportBudgetsWithOptionalParams(t *testing.T) {
 	}))
 	defer server.Close()
 	baseURL := server.URL
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	resp, err := client.Data.Export.ExportBudgets(context.TODO(), emceesprodtesting5.DataExportExportBudgetsParams{
-		Type:     emceesprodtesting5.ExportFileFilterCsv,
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	resp, err := client.Data.Export.ExportBudgets(context.TODO(), firefly.DataExportExportBudgetsParams{
+		Type:     firefly.ExportFileFilterCsv,
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -113,7 +113,7 @@ func TestDataExportExportBudgetsWithOptionalParams(t *testing.T) {
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -131,15 +131,15 @@ func TestDataExportExportCategoriesWithOptionalParams(t *testing.T) {
 	}))
 	defer server.Close()
 	baseURL := server.URL
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	resp, err := client.Data.Export.ExportCategories(context.TODO(), emceesprodtesting5.DataExportExportCategoriesParams{
-		Type:     emceesprodtesting5.ExportFileFilterCsv,
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	resp, err := client.Data.Export.ExportCategories(context.TODO(), firefly.DataExportExportCategoriesParams{
+		Type:     firefly.ExportFileFilterCsv,
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -149,7 +149,7 @@ func TestDataExportExportCategoriesWithOptionalParams(t *testing.T) {
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -167,15 +167,15 @@ func TestDataExportExportPiggyBanksWithOptionalParams(t *testing.T) {
 	}))
 	defer server.Close()
 	baseURL := server.URL
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	resp, err := client.Data.Export.ExportPiggyBanks(context.TODO(), emceesprodtesting5.DataExportExportPiggyBanksParams{
-		Type:     emceesprodtesting5.ExportFileFilterCsv,
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	resp, err := client.Data.Export.ExportPiggyBanks(context.TODO(), firefly.DataExportExportPiggyBanksParams{
+		Type:     firefly.ExportFileFilterCsv,
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -185,7 +185,7 @@ func TestDataExportExportPiggyBanksWithOptionalParams(t *testing.T) {
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -203,15 +203,15 @@ func TestDataExportExportRecurringWithOptionalParams(t *testing.T) {
 	}))
 	defer server.Close()
 	baseURL := server.URL
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	resp, err := client.Data.Export.ExportRecurring(context.TODO(), emceesprodtesting5.DataExportExportRecurringParams{
-		Type:     emceesprodtesting5.ExportFileFilterCsv,
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	resp, err := client.Data.Export.ExportRecurring(context.TODO(), firefly.DataExportExportRecurringParams{
+		Type:     firefly.ExportFileFilterCsv,
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -221,7 +221,7 @@ func TestDataExportExportRecurringWithOptionalParams(t *testing.T) {
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -239,15 +239,15 @@ func TestDataExportExportRulesWithOptionalParams(t *testing.T) {
 	}))
 	defer server.Close()
 	baseURL := server.URL
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	resp, err := client.Data.Export.ExportRules(context.TODO(), emceesprodtesting5.DataExportExportRulesParams{
-		Type:     emceesprodtesting5.ExportFileFilterCsv,
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	resp, err := client.Data.Export.ExportRules(context.TODO(), firefly.DataExportExportRulesParams{
+		Type:     firefly.ExportFileFilterCsv,
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -257,7 +257,7 @@ func TestDataExportExportRulesWithOptionalParams(t *testing.T) {
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -275,15 +275,15 @@ func TestDataExportExportTagsWithOptionalParams(t *testing.T) {
 	}))
 	defer server.Close()
 	baseURL := server.URL
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	resp, err := client.Data.Export.ExportTags(context.TODO(), emceesprodtesting5.DataExportExportTagsParams{
-		Type:     emceesprodtesting5.ExportFileFilterCsv,
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	resp, err := client.Data.Export.ExportTags(context.TODO(), firefly.DataExportExportTagsParams{
+		Type:     firefly.ExportFileFilterCsv,
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -293,7 +293,7 @@ func TestDataExportExportTagsWithOptionalParams(t *testing.T) {
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -311,18 +311,18 @@ func TestDataExportExportTransactionsWithOptionalParams(t *testing.T) {
 	}))
 	defer server.Close()
 	baseURL := server.URL
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	resp, err := client.Data.Export.ExportTransactions(context.TODO(), emceesprodtesting5.DataExportExportTransactionsParams{
+	resp, err := client.Data.Export.ExportTransactions(context.TODO(), firefly.DataExportExportTransactionsParams{
 		End:      time.Now(),
 		Start:    time.Now(),
-		Accounts: emceesprodtesting5.String("accounts"),
-		Type:     emceesprodtesting5.ExportFileFilterCsv,
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		Accounts: firefly.String("accounts"),
+		Type:     firefly.ExportFileFilterCsv,
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -332,7 +332,7 @@ func TestDataExportExportTransactionsWithOptionalParams(t *testing.T) {
 
 	b, err := io.ReadAll(resp.Body)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

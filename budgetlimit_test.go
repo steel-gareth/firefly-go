@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,25 +23,25 @@ func TestBudgetLimitNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Budgets.Limits.New(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.BudgetLimitNewParams{
+		firefly.BudgetLimitNewParams{
 			Amount:       "123.45",
 			End:          time.Now(),
 			Start:        time.Now(),
-			CurrencyCode: emceesprodtesting5.String("EUR"),
-			CurrencyID:   emceesprodtesting5.String("5"),
-			FireWebhooks: emceesprodtesting5.Bool(true),
-			Notes:        emceesprodtesting5.String("Some example notes"),
-			XTraceID:     emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			CurrencyCode: firefly.String("EUR"),
+			CurrencyID:   firefly.String("5"),
+			FireWebhooks: firefly.Bool(true),
+			Notes:        firefly.String("Some example notes"),
+			XTraceID:     firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -58,19 +58,19 @@ func TestBudgetLimitGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Budgets.Limits.Get(
 		context.TODO(),
 		1,
-		emceesprodtesting5.BudgetLimitGetParams{
+		firefly.BudgetLimitGetParams{
 			ID:       "123",
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -87,27 +87,27 @@ func TestBudgetLimitUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Budgets.Limits.Update(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.BudgetLimitUpdateParams{
+		firefly.BudgetLimitUpdateParams{
 			ID:           "123",
-			Amount:       emceesprodtesting5.String("123.45"),
-			CurrencyCode: emceesprodtesting5.String("EUR"),
-			CurrencyID:   emceesprodtesting5.String("5"),
-			CurrencyName: emceesprodtesting5.String("Euro"),
-			End:          emceesprodtesting5.Time(time.Now()),
-			FireWebhooks: emceesprodtesting5.Bool(true),
-			Notes:        emceesprodtesting5.String("Some example notes"),
-			Start:        emceesprodtesting5.Time(time.Now()),
-			XTraceID:     emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			Amount:       firefly.String("123.45"),
+			CurrencyCode: firefly.String("EUR"),
+			CurrencyID:   firefly.String("5"),
+			CurrencyName: firefly.String("Euro"),
+			End:          firefly.Time(time.Now()),
+			FireWebhooks: firefly.Bool(true),
+			Notes:        firefly.String("Some example notes"),
+			Start:        firefly.Time(time.Now()),
+			XTraceID:     firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -124,19 +124,19 @@ func TestBudgetLimitDeleteWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Budgets.Limits.Delete(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.BudgetLimitDeleteParams{
+		firefly.BudgetLimitDeleteParams{
 			ID:       "123",
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -153,20 +153,20 @@ func TestBudgetLimitList0WithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Budgets.Limits.List0(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.BudgetLimitList0Params{
-			End:      emceesprodtesting5.Time(time.Now()),
-			Start:    emceesprodtesting5.Time(time.Now()),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.BudgetLimitList0Params{
+			End:      firefly.Time(time.Now()),
+			Start:    firefly.Time(time.Now()),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -183,16 +183,16 @@ func TestBudgetLimitList1WithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Budgets.Limits.List1(context.TODO(), emceesprodtesting5.BudgetLimitList1Params{
+	_, err := client.Budgets.Limits.List1(context.TODO(), firefly.BudgetLimitList1Params{
 		End:      time.Now(),
 		Start:    time.Now(),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -209,22 +209,22 @@ func TestBudgetLimitListTransactionsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Budgets.Limits.ListTransactions(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.BudgetLimitListTransactionsParams{
+		firefly.BudgetLimitListTransactionsParams{
 			ID:       "123",
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			Type:     emceesprodtesting5.TransactionTypeFilterAll,
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			Type:     firefly.TransactionTypeFilterAll,
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

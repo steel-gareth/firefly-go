@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,19 +23,19 @@ func TestChartBalanceGetBalanceWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Chart.Balance.GetBalance(context.TODO(), emceesprodtesting5.ChartBalanceGetBalanceParams{
+	_, err := client.Chart.Balance.GetBalance(context.TODO(), firefly.ChartBalanceGetBalanceParams{
 		End:         time.Now(),
 		Start:       time.Now(),
 		Accounts:    []int64{1, 2, 3},
-		Period:      emceesprodtesting5.ChartBalanceGetBalanceParamsPeriod1M,
-		Preselected: emceesprodtesting5.ChartBalanceGetBalanceParamsPreselectedAll,
-		XTraceID:    emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		Period:      firefly.ChartBalanceGetBalanceParamsPeriod1M,
+		Preselected: firefly.ChartBalanceGetBalanceParamsPreselectedAll,
+		XTraceID:    firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

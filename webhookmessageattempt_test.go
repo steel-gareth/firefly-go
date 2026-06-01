@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -22,20 +22,20 @@ func TestWebhookMessageAttemptGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Webhooks.Messages.Attempts.Get(
 		context.TODO(),
 		1,
-		emceesprodtesting5.WebhookMessageAttemptGetParams{
+		firefly.WebhookMessageAttemptGetParams{
 			ID:        "123",
 			MessageID: 1,
-			XTraceID:  emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID:  firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -52,21 +52,21 @@ func TestWebhookMessageAttemptListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Webhooks.Messages.Attempts.List(
 		context.TODO(),
 		1,
-		emceesprodtesting5.WebhookMessageAttemptListParams{
+		firefly.WebhookMessageAttemptListParams{
 			ID:       "123",
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -83,20 +83,20 @@ func TestWebhookMessageAttemptDeleteWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Webhooks.Messages.Attempts.Delete(
 		context.TODO(),
 		1,
-		emceesprodtesting5.WebhookMessageAttemptDeleteParams{
+		firefly.WebhookMessageAttemptDeleteParams{
 			ID:        "123",
 			MessageID: 1,
-			XTraceID:  emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID:  firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

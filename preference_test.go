@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -22,20 +22,20 @@ func TestPreferenceNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Preferences.New(context.TODO(), emceesprodtesting5.PreferenceNewParams{
-		Preference: emceesprodtesting5.PreferenceParam{
-			Data: emceesprodtesting5.PolymorphicPropertyUnionParam{
-				OfBool: emceesprodtesting5.Bool(true),
+	_, err := client.Preferences.New(context.TODO(), firefly.PreferenceNewParams{
+		Preference: firefly.PreferenceParam{
+			Data: firefly.PolymorphicPropertyUnionParam{
+				OfBool: firefly.Bool(true),
 			},
 			Name: "currencyPreference",
 		},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -52,18 +52,18 @@ func TestPreferenceGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Preferences.Get(
 		context.TODO(),
 		"currencyPreference",
-		emceesprodtesting5.PreferenceGetParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.PreferenceGetParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -80,21 +80,21 @@ func TestPreferenceUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Preferences.Update(
 		context.TODO(),
 		"currencyPreference",
-		emceesprodtesting5.PreferenceUpdateParams{
-			Data: emceesprodtesting5.PolymorphicPropertyUnionParam{
-				OfBool: emceesprodtesting5.Bool(true),
+		firefly.PreferenceUpdateParams{
+			Data: firefly.PolymorphicPropertyUnionParam{
+				OfBool: firefly.Bool(true),
 			},
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -111,16 +111,16 @@ func TestPreferenceListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Preferences.List(context.TODO(), emceesprodtesting5.PreferenceListParams{
-		Limit:    emceesprodtesting5.Int(10),
-		Page:     emceesprodtesting5.Int(1),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Preferences.List(context.TODO(), firefly.PreferenceListParams{
+		Limit:    firefly.Int(10),
+		Page:     firefly.Int(1),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

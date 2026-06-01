@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,19 +23,19 @@ func TestExchangeRateNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.ExchangeRates.New(context.TODO(), emceesprodtesting5.ExchangeRateNewParams{
+	_, err := client.ExchangeRates.New(context.TODO(), firefly.ExchangeRateNewParams{
 		Date:     time.Now(),
 		From:     "USD",
 		Rates:    map[string]any{},
 		To:       "EUR",
-		Rate:     emceesprodtesting5.String("2.3456"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		Rate:     firefly.String("2.3456"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -52,20 +52,20 @@ func TestExchangeRateGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.ExchangeRates.Get(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.ExchangeRateGetParams{
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.ExchangeRateGetParams{
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -82,22 +82,22 @@ func TestExchangeRateUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.ExchangeRates.Update(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.ExchangeRateUpdateParams{
+		firefly.ExchangeRateUpdateParams{
 			Date:     time.Now(),
 			Rate:     "2.3456",
-			From:     emceesprodtesting5.String("USD"),
-			To:       emceesprodtesting5.String("EUR"),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			From:     firefly.String("USD"),
+			To:       firefly.String("EUR"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -114,16 +114,16 @@ func TestExchangeRateListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.ExchangeRates.List(context.TODO(), emceesprodtesting5.ExchangeRateListParams{
-		Limit:    emceesprodtesting5.Int(10),
-		Page:     emceesprodtesting5.Int(1),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.ExchangeRates.List(context.TODO(), firefly.ExchangeRateListParams{
+		Limit:    firefly.Int(10),
+		Page:     firefly.Int(1),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -140,18 +140,18 @@ func TestExchangeRateDeleteWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.ExchangeRates.Delete(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.ExchangeRateDeleteParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.ExchangeRateDeleteParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -168,23 +168,23 @@ func TestExchangeRateNewByCurrenciesWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.ExchangeRates.NewByCurrencies(
 		context.TODO(),
 		"USD",
-		emceesprodtesting5.ExchangeRateNewByCurrenciesParams{
+		firefly.ExchangeRateNewByCurrenciesParams{
 			From: "EUR",
 			Body: map[string]string{
 				"2025-08-01": "1.2345",
 				"2025-08-02": "6.3456",
 			},
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -201,24 +201,24 @@ func TestExchangeRateNewByDateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.ExchangeRates.NewByDate(
 		context.TODO(),
 		"2026-04-01",
-		emceesprodtesting5.ExchangeRateNewByDateParams{
+		firefly.ExchangeRateNewByDateParams{
 			Date: map[string]any{},
 			From: "EUR",
 			Rates: map[string]string{
 				"USD": "1.2345",
 				"GBP": "6.3456",
 			},
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -235,19 +235,19 @@ func TestExchangeRateDeleteAllByCurrenciesWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.ExchangeRates.DeleteAllByCurrencies(
 		context.TODO(),
 		"USD",
-		emceesprodtesting5.ExchangeRateDeleteAllByCurrenciesParams{
+		firefly.ExchangeRateDeleteAllByCurrenciesParams{
 			From:     "EUR",
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -264,20 +264,20 @@ func TestExchangeRateDeleteByDateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.ExchangeRates.DeleteByDate(
 		context.TODO(),
 		"2026-04-01",
-		emceesprodtesting5.ExchangeRateDeleteByDateParams{
+		firefly.ExchangeRateDeleteByDateParams{
 			From:     "EUR",
 			To:       "USD",
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -294,21 +294,21 @@ func TestExchangeRateListByCurrenciesWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.ExchangeRates.ListByCurrencies(
 		context.TODO(),
 		"USD",
-		emceesprodtesting5.ExchangeRateListByCurrenciesParams{
+		firefly.ExchangeRateListByCurrenciesParams{
 			From:     "EUR",
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -325,22 +325,22 @@ func TestExchangeRateGetByDateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.ExchangeRates.GetByDate(
 		context.TODO(),
 		"2026-04-01",
-		emceesprodtesting5.ExchangeRateGetByDateParams{
+		firefly.ExchangeRateGetByDateParams{
 			From:     "EUR",
 			To:       "USD",
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -357,21 +357,21 @@ func TestExchangeRateUpdateByDateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.ExchangeRates.UpdateByDate(
 		context.TODO(),
 		"2026-04-01",
-		emceesprodtesting5.ExchangeRateUpdateByDateParams{
+		firefly.ExchangeRateUpdateByDateParams{
 			From:     "EUR",
 			To:       "USD",
 			Rate:     "2.3456",
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

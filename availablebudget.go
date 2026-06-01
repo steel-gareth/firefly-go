@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5
+package firefly
 
 import (
 	"context"
@@ -23,7 +23,7 @@ import (
 // to themselves. Used in periodic budgeting.
 //
 // AvailableBudgetService contains methods and other services that help with
-// interacting with the emcees-prod-testing-5 API.
+// interacting with the firefly API.
 //
 // Note, unlike clients, this service does not read variables from the environment
 // automatically. You should not instantiate this service directly, and instead use

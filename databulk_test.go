@@ -13,7 +13,7 @@ import (
 	"github.com/stainless-sdks/emcees-prod-testing-5-go/option"
 )
 
-func TestStoreListInventory(t *testing.T) {
+func TestDataBulkUpdateTransactionsWithOptionalParams(t *testing.T) {
 	t.Skip("Mock server tests are disabled")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
@@ -24,9 +24,11 @@ func TestStoreListInventory(t *testing.T) {
 	}
 	client := emceesprodtesting5.NewClient(
 		option.WithBaseURL(baseURL),
-		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Store.ListInventory(context.TODO())
+	err := client.Data.Bulk.UpdateTransactions(context.TODO(), emceesprodtesting5.DataBulkUpdateTransactionsParams{
+		Query:    "query",
+		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	})
 	if err != nil {
 		var apierr *emceesprodtesting5.Error
 		if errors.As(err, &apierr) {

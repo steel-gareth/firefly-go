@@ -1,4 +1,4 @@
-# More Conflicting Go API Library
+# Emcees Prod Testing 5 Go API Library
 
 <!-- x-release-please-start-version -->
 
@@ -6,19 +6,10 @@
 
 <!-- x-release-please-end -->
 
-The More Conflicting Go library provides convenient access to the More Conflicting REST API
+The Emcees Prod Testing 5 Go library provides convenient access to the [Emcees Prod Testing 5 REST API](https://firefly-iii.org)
 from applications written in Go.
 
 It is generated with [Stainless](https://www.stainless.com/).
-
-## MCP Server
-
-Use the More Conflicting MCP Server to enable AI assistants to interact with this API, allowing them to explore endpoints, make test requests, and use documentation to help integrate this SDK into your application.
-
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=emcees-prod-testing-5-mcp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsImVtY2Vlcy1wcm9kLXRlc3RpbmctNS1tY3AiXSwiZW52Ijp7IlBFVFNUT1JFX0FQSV9LRVkiOiJNeSBBUEkgS2V5In19)
-[![Install in VS Code](https://img.shields.io/badge/_-Add_to_VS_Code-blue?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI0VFRSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMzAuMjM1IDM5Ljg4NGEyLjQ5MSAyLjQ5MSAwIDAgMS0xLjc4MS0uNzNMMTIuNyAyNC43OGwtMy40NiAyLjYyNC0zLjQwNiAyLjU4MmExLjY2NSAxLjY2NSAwIDAgMS0xLjA4Mi4zMzggMS42NjQgMS42NjQgMCAwIDEtMS4wNDYtLjQzMWwtMi4yLTJhMS42NjYgMS42NjYgMCAwIDEgMC0yLjQ2M0w3LjQ1OCAyMCA0LjY3IDE3LjQ1MyAxLjUwNyAxNC41N2ExLjY2NSAxLjY2NSAwIDAgMSAwLTIuNDYzbDIuMi0yYTEuNjY1IDEuNjY1IDAgMCAxIDIuMTMtLjA5N2w2Ljg2MyA1LjIwOUwyOC40NTIuODQ0YTIuNDg4IDIuNDg4IDAgMCAxIDEuODQxLS43MjljLjM1MS4wMDkuNjk5LjA5MSAxLjAxOS4yNDVsOC4yMzYgMy45NjFhMi41IDIuNSAwIDAgMSAxLjQxNSAyLjI1M3YuMDk5LS4wNDVWMzMuMzd2LS4wNDUuMDk1YTIuNTAxIDIuNTAxIDAgMCAxLTEuNDE2IDIuMjU3bC04LjIzNSAzLjk2MWEyLjQ5MiAyLjQ5MiAwIDAgMS0xLjA3Ny4yNDZabS43MTYtMjguOTQ3LTExLjk0OCA5LjA2MiAxMS45NTIgOS4wNjUtLjAwNC0xOC4xMjdaIi8+PC9zdmc+)](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22emcees-prod-testing-5-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22emcees-prod-testing-5-mcp%22%5D%2C%22env%22%3A%7B%22PETSTORE_API_KEY%22%3A%22My%20API%20Key%22%7D%7D)
-
-> Note: You may need to set environment variables in your MCP client.
 
 ## Installation
 
@@ -55,13 +46,13 @@ import (
 
 func main() {
 	client := emceesprodtesting5.NewClient(
-		option.WithAPIKey("My API Key"), // defaults to os.LookupEnv("PETSTORE_API_KEY")
+		option.WithEnvironmentEnvironment1(), // defaults to option.WithEnvironmentProduction()
 	)
-	order, err := client.Store.Orders.New(context.TODO(), emceesprodtesting5.StoreOrderNewParams{})
+	response, err := client.Autocomplete.ListAccounts(context.TODO(), emceesprodtesting5.AutocompleteListAccountsParams{})
 	if err != nil {
 		panic(err.Error())
 	}
-	fmt.Printf("%+v\n", order.ID)
+	fmt.Printf("%+v\n", response)
 }
 
 ```
@@ -267,7 +258,7 @@ client := emceesprodtesting5.NewClient(
 	option.WithHeader("X-Some-Header", "custom_header_info"),
 )
 
-client.Store.ListInventory(context.TODO(), ...,
+client.Autocomplete.ListAccounts(context.TODO(), ...,
 	// Override the header
 	option.WithHeader("X-Some-Header", "some_other_custom_header_info"),
 	// Add an undocumented field to the request body, using sjson syntax
@@ -298,14 +289,14 @@ When the API returns a non-success status code, we return an error with type
 To handle errors, we recommend that you use the `errors.As` pattern:
 
 ```go
-_, err := client.Store.ListInventory(context.TODO())
+_, err := client.Autocomplete.ListAccounts(context.TODO(), emceesprodtesting5.AutocompleteListAccountsParams{})
 if err != nil {
 	var apierr *emceesprodtesting5.Error
 	if errors.As(err, &apierr) {
 		println(string(apierr.DumpRequest(true)))  // Prints the serialized HTTP request
 		println(string(apierr.DumpResponse(true))) // Prints the serialized HTTP response
 	}
-	panic(err.Error()) // GET "/store/inventory": 400 Bad Request { ... }
+	panic(err.Error()) // GET "/v1/autocomplete/accounts": 400 Bad Request { ... }
 }
 ```
 
@@ -323,8 +314,9 @@ To set a per-retry timeout, use `option.WithRequestTimeout()`.
 // This sets the timeout for the request, including all the retries.
 ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 defer cancel()
-client.Store.ListInventory(
+client.Autocomplete.ListAccounts(
 	ctx,
+	emceesprodtesting5.AutocompleteListAccountsParams{},
 	// This sets the per-retry timeout
 	option.WithRequestTimeout(20*time.Second),
 )
@@ -358,7 +350,11 @@ client := emceesprodtesting5.NewClient(
 )
 
 // Override per-request:
-client.Store.ListInventory(context.TODO(), option.WithMaxRetries(5))
+client.Autocomplete.ListAccounts(
+	context.TODO(),
+	emceesprodtesting5.AutocompleteListAccountsParams{},
+	option.WithMaxRetries(5),
+)
 ```
 
 ### Accessing raw response data (e.g. response headers)
@@ -369,7 +365,11 @@ you need to examine response headers, status codes, or other details.
 ```go
 // Create a variable to store the HTTP response
 var response *http.Response
-response, err := client.Store.ListInventory(context.TODO(), option.WithResponseInto(&response))
+response, err := client.Autocomplete.ListAccounts(
+	context.TODO(),
+	emceesprodtesting5.AutocompleteListAccountsParams{},
+	option.WithResponseInto(&response),
+)
 if err != nil {
 	// handle error
 }

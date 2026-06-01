@@ -15,7 +15,7 @@ import (
 	"github.com/tidwall/sjson"
 )
 
-// RequestOption is an option for the requests made by the more-conflicting API Client
+// RequestOption is an option for the requests made by the emcees-prod-testing-5 API Client
 // which can be supplied to clients, services, and methods. You can read more about this functional
 // options pattern in our [README].
 //
@@ -263,13 +263,20 @@ func WithRequestTimeout(dur time.Duration) RequestOption {
 // environment to be the "production" environment. An environment specifies which base URL
 // to use by default.
 func WithEnvironmentProduction() RequestOption {
-	return requestconfig.WithDefaultBaseURL("https://petstore3.swagger.io/api/v3/")
+	return requestconfig.WithDefaultBaseURL("https://demo.firefly-iii.org/api/")
 }
 
-// WithAPIKey returns a RequestOption that sets the client setting "api_key".
-func WithAPIKey(value string) RequestOption {
+// WithEnvironmentEnvironment1 returns a RequestOption that sets the current
+// environment to be the "environment_1" environment. An environment specifies which base URL
+// to use by default.
+func WithEnvironmentEnvironment1() RequestOption {
+	return requestconfig.WithDefaultBaseURL("http://firefly.sd.internal/api/")
+}
+
+// WithBearerToken returns a RequestOption that sets the client setting "bearer_token".
+func WithBearerToken(value string) RequestOption {
 	return requestconfig.RequestOptionFunc(func(r *requestconfig.RequestConfig) error {
-		r.APIKey = value
-		return r.Apply(WithHeader("api_key", r.APIKey))
+		r.BearerToken = value
+		return r.Apply(WithHeader("authorization", fmt.Sprintf("Bearer %s", r.BearerToken)))
 	})
 }

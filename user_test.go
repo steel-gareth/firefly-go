@@ -24,19 +24,15 @@ func TestUserNewWithOptionalParams(t *testing.T) {
 	}
 	client := emceesprodtesting5.NewClient(
 		option.WithBaseURL(baseURL),
-		option.WithAPIKey("My API Key"),
 	)
 	_, err := client.Users.New(context.TODO(), emceesprodtesting5.UserNewParams{
 		User: emceesprodtesting5.UserParam{
-			ID:         emceesprodtesting5.Int(10),
-			Email:      emceesprodtesting5.String("john@email.com"),
-			FirstName:  emceesprodtesting5.String("John"),
-			LastName:   emceesprodtesting5.String("James"),
-			Password:   emceesprodtesting5.String("12345"),
-			Phone:      emceesprodtesting5.String("12345"),
-			Username:   emceesprodtesting5.String("theUser"),
-			UserStatus: emceesprodtesting5.Int(1),
+			Email:       "james@firefly-iii.org",
+			Blocked:     emceesprodtesting5.Bool(false),
+			BlockedCode: emceesprodtesting5.UserBlockedCodeEmailChanged,
+			Role:        emceesprodtesting5.UserRoleOwner,
 		},
+		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
 		var apierr *emceesprodtesting5.Error
@@ -47,7 +43,7 @@ func TestUserNewWithOptionalParams(t *testing.T) {
 	}
 }
 
-func TestUserGet(t *testing.T) {
+func TestUserGetWithOptionalParams(t *testing.T) {
 	t.Skip("Mock server tests are disabled")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
@@ -58,9 +54,14 @@ func TestUserGet(t *testing.T) {
 	}
 	client := emceesprodtesting5.NewClient(
 		option.WithBaseURL(baseURL),
-		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Users.Get(context.TODO(), "username")
+	_, err := client.Users.Get(
+		context.TODO(),
+		"123",
+		emceesprodtesting5.UserGetParams{
+			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		},
+	)
 	if err != nil {
 		var apierr *emceesprodtesting5.Error
 		if errors.As(err, &apierr) {
@@ -81,22 +82,18 @@ func TestUserUpdateWithOptionalParams(t *testing.T) {
 	}
 	client := emceesprodtesting5.NewClient(
 		option.WithBaseURL(baseURL),
-		option.WithAPIKey("My API Key"),
 	)
-	err := client.Users.Update(
+	_, err := client.Users.Update(
 		context.TODO(),
-		"username",
+		"123",
 		emceesprodtesting5.UserUpdateParams{
 			User: emceesprodtesting5.UserParam{
-				ID:         emceesprodtesting5.Int(10),
-				Email:      emceesprodtesting5.String("john@email.com"),
-				FirstName:  emceesprodtesting5.String("John"),
-				LastName:   emceesprodtesting5.String("James"),
-				Password:   emceesprodtesting5.String("12345"),
-				Phone:      emceesprodtesting5.String("12345"),
-				Username:   emceesprodtesting5.String("theUser"),
-				UserStatus: emceesprodtesting5.Int(1),
+				Email:       "james@firefly-iii.org",
+				Blocked:     emceesprodtesting5.Bool(false),
+				BlockedCode: emceesprodtesting5.UserBlockedCodeEmailChanged,
+				Role:        emceesprodtesting5.UserRoleOwner,
 			},
+			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
@@ -108,7 +105,7 @@ func TestUserUpdateWithOptionalParams(t *testing.T) {
 	}
 }
 
-func TestUserDelete(t *testing.T) {
+func TestUserListWithOptionalParams(t *testing.T) {
 	t.Skip("Mock server tests are disabled")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
@@ -119,42 +116,11 @@ func TestUserDelete(t *testing.T) {
 	}
 	client := emceesprodtesting5.NewClient(
 		option.WithBaseURL(baseURL),
-		option.WithAPIKey("My API Key"),
 	)
-	err := client.Users.Delete(context.TODO(), "username")
-	if err != nil {
-		var apierr *emceesprodtesting5.Error
-		if errors.As(err, &apierr) {
-			t.Log(string(apierr.DumpRequest(true)))
-		}
-		t.Fatalf("err should be nil: %s", err.Error())
-	}
-}
-
-func TestUserNewWithListWithOptionalParams(t *testing.T) {
-	t.Skip("Mock server tests are disabled")
-	baseURL := "http://localhost:4010"
-	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
-		baseURL = envURL
-	}
-	if !testutil.CheckTestServer(t, baseURL) {
-		return
-	}
-	client := emceesprodtesting5.NewClient(
-		option.WithBaseURL(baseURL),
-		option.WithAPIKey("My API Key"),
-	)
-	_, err := client.Users.NewWithList(context.TODO(), emceesprodtesting5.UserNewWithListParams{
-		Items: []emceesprodtesting5.UserParam{{
-			ID:         emceesprodtesting5.Int(10),
-			Email:      emceesprodtesting5.String("john@email.com"),
-			FirstName:  emceesprodtesting5.String("John"),
-			LastName:   emceesprodtesting5.String("James"),
-			Password:   emceesprodtesting5.String("12345"),
-			Phone:      emceesprodtesting5.String("12345"),
-			Username:   emceesprodtesting5.String("theUser"),
-			UserStatus: emceesprodtesting5.Int(1),
-		}},
+	_, err := client.Users.List(context.TODO(), emceesprodtesting5.UserListParams{
+		Limit:    emceesprodtesting5.Int(10),
+		Page:     emceesprodtesting5.Int(1),
+		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
 		var apierr *emceesprodtesting5.Error
@@ -165,7 +131,7 @@ func TestUserNewWithListWithOptionalParams(t *testing.T) {
 	}
 }
 
-func TestUserLoginWithOptionalParams(t *testing.T) {
+func TestUserDeleteWithOptionalParams(t *testing.T) {
 	t.Skip("Mock server tests are disabled")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
@@ -176,35 +142,14 @@ func TestUserLoginWithOptionalParams(t *testing.T) {
 	}
 	client := emceesprodtesting5.NewClient(
 		option.WithBaseURL(baseURL),
-		option.WithAPIKey("My API Key"),
 	)
-	_, err := client.Users.Login(context.TODO(), emceesprodtesting5.UserLoginParams{
-		Password: emceesprodtesting5.String("password"),
-		Username: emceesprodtesting5.String("username"),
-	})
-	if err != nil {
-		var apierr *emceesprodtesting5.Error
-		if errors.As(err, &apierr) {
-			t.Log(string(apierr.DumpRequest(true)))
-		}
-		t.Fatalf("err should be nil: %s", err.Error())
-	}
-}
-
-func TestUserLogout(t *testing.T) {
-	t.Skip("Mock server tests are disabled")
-	baseURL := "http://localhost:4010"
-	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
-		baseURL = envURL
-	}
-	if !testutil.CheckTestServer(t, baseURL) {
-		return
-	}
-	client := emceesprodtesting5.NewClient(
-		option.WithBaseURL(baseURL),
-		option.WithAPIKey("My API Key"),
+	err := client.Users.Delete(
+		context.TODO(),
+		"123",
+		emceesprodtesting5.UserDeleteParams{
+			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		},
 	)
-	err := client.Users.Logout(context.TODO())
 	if err != nil {
 		var apierr *emceesprodtesting5.Error
 		if errors.As(err, &apierr) {

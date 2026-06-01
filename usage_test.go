@@ -23,11 +23,10 @@ func TestUsage(t *testing.T) {
 	}
 	client := emceesprodtesting5.NewClient(
 		option.WithBaseURL(baseURL),
-		option.WithAPIKey("My API Key"),
 	)
-	order, err := client.Store.Orders.New(context.TODO(), emceesprodtesting5.StoreOrderNewParams{})
+	response, err := client.Autocomplete.ListAccounts(context.TODO(), emceesprodtesting5.AutocompleteListAccountsParams{})
 	if err != nil {
 		t.Fatalf("err should be nil: %s", err.Error())
 	}
-	t.Logf("%+v\n", order.ID)
+	t.Logf("%+v\n", response)
 }

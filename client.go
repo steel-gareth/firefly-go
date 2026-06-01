@@ -14,29 +14,119 @@ import (
 )
 
 // Client creates a struct with services and top level methods that help with
-// interacting with the more-conflicting API. You should not instantiate this
+// interacting with the emcees-prod-testing-5 API. You should not instantiate this
 // client directly, and instead use the [NewClient] method instead.
 type Client struct {
 	options []option.RequestOption
-	// Everything about your Pets
-	Pets PetService
-	// Access to Petstore orders
-	Store StoreService
-	// Operations about user
+	// Auto-complete endpoints show basic information about Firefly III models, like
+	// the name and maybe some amounts. They all support a search query and can be used
+	// to autocomplete data in forms. Autocomplete return values always have a
+	// &quot;name&quot;-field.
+	Autocomplete AutocompleteService
+	Chart        ChartService
+	// The &quot;data&quot;-endpoints manage generic Firefly III and user-specific
+	// data.
+	Data    DataService
+	Insight InsightService
+	// Endpoints that deliver all of the user&#039;s asset, expense and other accounts
+	// (and the metadata) together with related transactions, piggy banks and other
+	// objects. Also delivers endpoints for CRUD operations for accounts.
+	Accounts AccountService
+	// Endpoints to manage the attachments of the authenticated user, including up- and
+	// downloading of the files.
+	Attachments AttachmentService
+	// Endpoints to manage the total available amount that the user has made available
+	// to themselves. Used in periodic budgeting.
+	AvailableBudgets AvailableBudgetService
+	// Endpoints to manage a user&#039;s bills and all related objects.
+	Bills BillService
+	// Endpoints to manage a user&#039;s budgets and get info on the related objects,
+	// like limits.
+	Budgets BudgetService
+	// Endpoints to manage a user&#039;s categories and get information on transactions
+	// and other related objects.
+	Categories CategoryService
+	// All currency exchange rates.
+	ExchangeRates ExchangeRateService
+	// Endpoints to manage links between transactions, and manage the type of links
+	// available.
+	LinkTypes LinkTypeService
+	// Endpoints to manage links between transactions, and manage the type of links
+	// available.
+	TransactionLinks TransactionLinkService
+	// Endpoints to control and manage all of the user&#039;s object groups. Can only
+	// be created in conjunction with another object (for example a piggy bank) and
+	// will auto-delete when no other items are linked to it.
+	ObjectGroups ObjectGroupService
+	// Endpoints to control and manage all of the user&#039;s piggy banks and related
+	// objects and information.
+	PiggyBanks PiggyBankService
+	// Use these endpoints to manage the user&#039;s recurring transactions, trigger
+	// the creation of transactions and manage the settings.
+	Recurrences RecurrenceService
+	// Manage all of the user&#039;s groups of rules and trigger the execution of
+	// entire groups.
+	RuleGroups RuleGroupService
+	// These endpoints can be used to manage all of the user&#039;s rules. Also
+	// includes triggers to execute or test rules and individual triggers.
+	Rules RuleService
+	// This endpoint manages all of the user&#039;s tags.
+	Tags TagService
+	// Endpoints to manage the currencies in Firefly III. Depending on the user&#039;s
+	// role you can also disable and enable them, or add new ones.
+	Currencies CurrencyService
+	// The most-used endpoints in Firefly III, these endpoints are used to manage the
+	// user&#039;s transactions.
+	TransactionJournals TransactionJournalService
+	// The most-used endpoints in Firefly III, these endpoints are used to manage the
+	// user&#039;s transactions.
+	Transactions TransactionService
+	// User groups are the objects around which &quot;financial administrations&quot;
+	// are built.
+	UserGroups UserGroupService
+	// Endpoints that allow you to search through the user&#039;s financial data.
+	// Different from the autocomplete endpoints, the search accepts more advanced
+	// arguments.
+	Search SearchService
+	// These endpoints deliver summaries, like sums, lists of numbers and other
+	// processed information. Mainly used for the main dashboard and pretty specific
+	// for Firefly III itself.
+	Summary SummaryService
+	// These endpoints deliver general system information, version- and meta
+	// information.
+	About AboutService
+	// These endpoints deliver general system information, version- and meta
+	// information.
+	Batch BatchService
+	// These endpoints allow you to manage and update the Firefly III configuration.
+	// You need to have the &quot;owner&quot; role to update configuration.
+	Configuration ConfigurationService
+	// These endpoints deliver general system information, version- and meta
+	// information.
+	Cron CronService
+	// Use these endpoints to manage the users registered within Firefly III. You need
+	// to have the &quot;owner&quot; role to access these endpoints.
 	Users UserService
+	// These endpoints can be used to manage the user&#039;s preferences, including
+	// some hidden ones.
+	Preferences PreferenceService
+	// These endpoints can be used to manage the user&#039;s webhooks and triggers them
+	// if necessary.
+	Webhooks WebhookService
 }
 
-// DefaultClientOptions read from the environment (PETSTORE_API_KEY,
-// MORE_CONFLICTING_BASE_URL). This should be used to initialize new clients.
+// DefaultClientOptions read from the environment
+// (EMCEES_PROD_TESTING_5_BEARER_TOKEN, EMCEES_PROD_TESTING_5_BASE_URL). This
+// should be used to initialize new clients.
 func DefaultClientOptions() []option.RequestOption {
 	defaults := []option.RequestOption{option.WithHTTPClient(defaultHTTPClient()), option.WithEnvironmentProduction()}
-	if o, ok := os.LookupEnv("MORE_CONFLICTING_BASE_URL"); ok {
+	if o, ok := os.LookupEnv("EMCEES_PROD_TESTING_5_BASE_URL"); ok {
 		defaults = append(defaults, option.WithBaseURL(o))
 	}
-	if o, ok := os.LookupEnv("PETSTORE_API_KEY"); ok {
-		defaults = append(defaults, option.WithAPIKey(o))
+	if o, ok := os.LookupEnv("EMCEES_PROD_TESTING_5_BEARER_TOKEN"); ok {
+		defaults = append(defaults, option.WithBearerToken(o))
 	}
-	if o, ok := os.LookupEnv("MORE_CONFLICTING_CUSTOM_HEADERS"); ok {
+	if o, ok := os.LookupEnv("EMCEES_PROD_TESTING_5_CUSTOM_HEADERS"); ok {
 		for _, line := range strings.Split(o, "\n") {
 			colon := strings.Index(line, ":")
 			if colon >= 0 {
@@ -48,17 +138,47 @@ func DefaultClientOptions() []option.RequestOption {
 }
 
 // NewClient generates a new client with the default option read from the
-// environment (PETSTORE_API_KEY, MORE_CONFLICTING_BASE_URL). The option passed in
-// as arguments are applied after these default arguments, and all option will be
-// passed down to the services and requests that this client makes.
+// environment (EMCEES_PROD_TESTING_5_BEARER_TOKEN,
+// EMCEES_PROD_TESTING_5_BASE_URL). The option passed in as arguments are applied
+// after these default arguments, and all option will be passed down to the
+// services and requests that this client makes.
 func NewClient(opts ...option.RequestOption) (r Client) {
 	opts = append(DefaultClientOptions(), opts...)
 
 	r = Client{options: opts}
 
-	r.Pets = NewPetService(opts...)
-	r.Store = NewStoreService(opts...)
+	r.Autocomplete = NewAutocompleteService(opts...)
+	r.Chart = NewChartService(opts...)
+	r.Data = NewDataService(opts...)
+	r.Insight = NewInsightService(opts...)
+	r.Accounts = NewAccountService(opts...)
+	r.Attachments = NewAttachmentService(opts...)
+	r.AvailableBudgets = NewAvailableBudgetService(opts...)
+	r.Bills = NewBillService(opts...)
+	r.Budgets = NewBudgetService(opts...)
+	r.Categories = NewCategoryService(opts...)
+	r.ExchangeRates = NewExchangeRateService(opts...)
+	r.LinkTypes = NewLinkTypeService(opts...)
+	r.TransactionLinks = NewTransactionLinkService(opts...)
+	r.ObjectGroups = NewObjectGroupService(opts...)
+	r.PiggyBanks = NewPiggyBankService(opts...)
+	r.Recurrences = NewRecurrenceService(opts...)
+	r.RuleGroups = NewRuleGroupService(opts...)
+	r.Rules = NewRuleService(opts...)
+	r.Tags = NewTagService(opts...)
+	r.Currencies = NewCurrencyService(opts...)
+	r.TransactionJournals = NewTransactionJournalService(opts...)
+	r.Transactions = NewTransactionService(opts...)
+	r.UserGroups = NewUserGroupService(opts...)
+	r.Search = NewSearchService(opts...)
+	r.Summary = NewSummaryService(opts...)
+	r.About = NewAboutService(opts...)
+	r.Batch = NewBatchService(opts...)
+	r.Configuration = NewConfigurationService(opts...)
+	r.Cron = NewCronService(opts...)
 	r.Users = NewUserService(opts...)
+	r.Preferences = NewPreferenceService(opts...)
+	r.Webhooks = NewWebhookService(opts...)
 
 	return
 }

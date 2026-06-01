@@ -26,7 +26,6 @@ func (t *closureTransport) RoundTrip(req *http.Request) (*http.Response, error) 
 func TestUserAgentHeader(t *testing.T) {
 	var userAgent string
 	client := emceesprodtesting5.NewClient(
-		option.WithAPIKey("My API Key"),
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -38,8 +37,8 @@ func TestUserAgentHeader(t *testing.T) {
 			},
 		}),
 	)
-	_, _ = client.Store.ListInventory(context.Background())
-	if userAgent != fmt.Sprintf("MoreConflicting/Go %s", internal.PackageVersion) {
+	_, _ = client.Autocomplete.ListAccounts(context.Background(), emceesprodtesting5.AutocompleteListAccountsParams{})
+	if userAgent != fmt.Sprintf("EmceesProdTesting5/Go %s", internal.PackageVersion) {
 		t.Errorf("Expected User-Agent to be correct, but got: %#v", userAgent)
 	}
 }
@@ -47,7 +46,6 @@ func TestUserAgentHeader(t *testing.T) {
 func TestRetryAfter(t *testing.T) {
 	retryCountHeaders := make([]string, 0)
 	client := emceesprodtesting5.NewClient(
-		option.WithAPIKey("My API Key"),
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -62,7 +60,7 @@ func TestRetryAfter(t *testing.T) {
 			},
 		}),
 	)
-	_, err := client.Store.ListInventory(context.Background())
+	_, err := client.Autocomplete.ListAccounts(context.Background(), emceesprodtesting5.AutocompleteListAccountsParams{})
 	if err == nil {
 		t.Error("Expected there to be a cancel error")
 	}
@@ -81,7 +79,6 @@ func TestRetryAfter(t *testing.T) {
 func TestDeleteRetryCountHeader(t *testing.T) {
 	retryCountHeaders := make([]string, 0)
 	client := emceesprodtesting5.NewClient(
-		option.WithAPIKey("My API Key"),
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -97,7 +94,7 @@ func TestDeleteRetryCountHeader(t *testing.T) {
 		}),
 		option.WithHeaderDel("X-Stainless-Retry-Count"),
 	)
-	_, err := client.Store.ListInventory(context.Background())
+	_, err := client.Autocomplete.ListAccounts(context.Background(), emceesprodtesting5.AutocompleteListAccountsParams{})
 	if err == nil {
 		t.Error("Expected there to be a cancel error")
 	}
@@ -111,7 +108,6 @@ func TestDeleteRetryCountHeader(t *testing.T) {
 func TestOverwriteRetryCountHeader(t *testing.T) {
 	retryCountHeaders := make([]string, 0)
 	client := emceesprodtesting5.NewClient(
-		option.WithAPIKey("My API Key"),
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -127,7 +123,7 @@ func TestOverwriteRetryCountHeader(t *testing.T) {
 		}),
 		option.WithHeader("X-Stainless-Retry-Count", "42"),
 	)
-	_, err := client.Store.ListInventory(context.Background())
+	_, err := client.Autocomplete.ListAccounts(context.Background(), emceesprodtesting5.AutocompleteListAccountsParams{})
 	if err == nil {
 		t.Error("Expected there to be a cancel error")
 	}
@@ -141,7 +137,6 @@ func TestOverwriteRetryCountHeader(t *testing.T) {
 func TestRetryAfterMs(t *testing.T) {
 	attempts := 0
 	client := emceesprodtesting5.NewClient(
-		option.WithAPIKey("My API Key"),
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -156,7 +151,7 @@ func TestRetryAfterMs(t *testing.T) {
 			},
 		}),
 	)
-	_, err := client.Store.ListInventory(context.Background())
+	_, err := client.Autocomplete.ListAccounts(context.Background(), emceesprodtesting5.AutocompleteListAccountsParams{})
 	if err == nil {
 		t.Error("Expected there to be a cancel error")
 	}
@@ -167,7 +162,6 @@ func TestRetryAfterMs(t *testing.T) {
 
 func TestContextCancel(t *testing.T) {
 	client := emceesprodtesting5.NewClient(
-		option.WithAPIKey("My API Key"),
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -179,7 +173,7 @@ func TestContextCancel(t *testing.T) {
 	)
 	cancelCtx, cancel := context.WithCancel(context.Background())
 	cancel()
-	_, err := client.Store.ListInventory(cancelCtx)
+	_, err := client.Autocomplete.ListAccounts(cancelCtx, emceesprodtesting5.AutocompleteListAccountsParams{})
 	if err == nil {
 		t.Error("Expected there to be a cancel error")
 	}
@@ -187,7 +181,6 @@ func TestContextCancel(t *testing.T) {
 
 func TestContextCancelDelay(t *testing.T) {
 	client := emceesprodtesting5.NewClient(
-		option.WithAPIKey("My API Key"),
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -199,7 +192,7 @@ func TestContextCancelDelay(t *testing.T) {
 	)
 	cancelCtx, cancel := context.WithTimeout(context.Background(), 2*time.Millisecond)
 	defer cancel()
-	_, err := client.Store.ListInventory(cancelCtx)
+	_, err := client.Autocomplete.ListAccounts(cancelCtx, emceesprodtesting5.AutocompleteListAccountsParams{})
 	if err == nil {
 		t.Error("expected there to be a cancel error")
 	}
@@ -215,7 +208,6 @@ func TestContextDeadline(t *testing.T) {
 
 	go func() {
 		client := emceesprodtesting5.NewClient(
-			option.WithAPIKey("My API Key"),
 			option.WithHTTPClient(&http.Client{
 				Transport: &closureTransport{
 					fn: func(req *http.Request) (*http.Response, error) {
@@ -225,7 +217,7 @@ func TestContextDeadline(t *testing.T) {
 				},
 			}),
 		)
-		_, err := client.Store.ListInventory(deadlineCtx)
+		_, err := client.Autocomplete.ListAccounts(deadlineCtx, emceesprodtesting5.AutocompleteListAccountsParams{})
 		if err == nil {
 			t.Error("expected there to be a deadline error")
 		}

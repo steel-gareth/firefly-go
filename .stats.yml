@@ -1,4 +1,4 @@
 configured_endpoints: 19
-openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/stainless-steel-gareth/emcees-prod-testing-5-6ab99812d68a805c841314b06d6af08f2f03f27e2ab5ee364c0bbb5771a754b0.yml
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/stainless-steel-gareth/emcees-prod-testing-5-93ab9fe06254ca2faf31aa14673dd43e293fb5cadaafdc83d7d9400faf1f18ad.yml
 openapi_spec_hash: 356a7298b2abac3fdf72ad5ee046b952
-config_hash: db700200b87f695a31e096a4e7e9b114
+config_hash: fcddbfdde5b7f59211ca11f20059eb42

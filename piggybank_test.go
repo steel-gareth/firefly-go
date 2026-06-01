@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,29 +23,29 @@ func TestPiggyBankNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.PiggyBanks.New(context.TODO(), emceesprodtesting5.PiggyBankNewParams{
+	_, err := client.PiggyBanks.New(context.TODO(), firefly.PiggyBankNewParams{
 		AccountID:    map[string]any{},
 		Name:         "New digital camera",
 		StartDate:    time.Now(),
-		TargetAmount: emceesprodtesting5.String("123.45"),
-		Accounts: []emceesprodtesting5.PiggyBankNewParamsAccount{{
-			ID:            emceesprodtesting5.String("3"),
-			CurrentAmount: emceesprodtesting5.String("123.45"),
-			Name:          emceesprodtesting5.String("Checking account"),
+		TargetAmount: firefly.String("123.45"),
+		Accounts: []firefly.PiggyBankNewParamsAccount{{
+			ID:            firefly.String("3"),
+			CurrentAmount: firefly.String("123.45"),
+			Name:          firefly.String("Checking account"),
 		}},
-		CurrentAmount:    emceesprodtesting5.String("123.45"),
-		Notes:            emceesprodtesting5.String("Some notes"),
-		ObjectGroupID:    emceesprodtesting5.String("5"),
-		ObjectGroupTitle: emceesprodtesting5.String("Example Group"),
-		Order:            emceesprodtesting5.Int(5),
-		TargetDate:       emceesprodtesting5.Time(time.Now()),
-		XTraceID:         emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		CurrentAmount:    firefly.String("123.45"),
+		Notes:            firefly.String("Some notes"),
+		ObjectGroupID:    firefly.String("5"),
+		ObjectGroupTitle: firefly.String("Example Group"),
+		Order:            firefly.Int(5),
+		TargetDate:       firefly.Time(time.Now()),
+		XTraceID:         firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -62,18 +62,18 @@ func TestPiggyBankGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.PiggyBanks.Get(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.PiggyBankGetParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.PiggyBankGetParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -90,32 +90,32 @@ func TestPiggyBankUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.PiggyBanks.Update(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.PiggyBankUpdateParams{
-			Accounts: []emceesprodtesting5.PiggyBankUpdateParamsAccount{{
+		firefly.PiggyBankUpdateParams{
+			Accounts: []firefly.PiggyBankUpdateParamsAccount{{
 				ID:            map[string]any{},
-				AccountID:     emceesprodtesting5.String("3"),
-				CurrentAmount: emceesprodtesting5.String("123.45"),
-				Name:          emceesprodtesting5.String("Checking account"),
+				AccountID:     firefly.String("3"),
+				CurrentAmount: firefly.String("123.45"),
+				Name:          firefly.String("Checking account"),
 			}},
-			Name:             emceesprodtesting5.String("New digital camera"),
-			Notes:            emceesprodtesting5.String("Some notes"),
-			ObjectGroupID:    emceesprodtesting5.String("5"),
-			ObjectGroupTitle: emceesprodtesting5.String("Example Group"),
-			Order:            emceesprodtesting5.Int(5),
-			StartDate:        emceesprodtesting5.Time(time.Now()),
-			TargetAmount:     emceesprodtesting5.String("123.45"),
-			TargetDate:       emceesprodtesting5.Time(time.Now()),
-			XTraceID:         emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			Name:             firefly.String("New digital camera"),
+			Notes:            firefly.String("Some notes"),
+			ObjectGroupID:    firefly.String("5"),
+			ObjectGroupTitle: firefly.String("Example Group"),
+			Order:            firefly.Int(5),
+			StartDate:        firefly.Time(time.Now()),
+			TargetAmount:     firefly.String("123.45"),
+			TargetDate:       firefly.Time(time.Now()),
+			XTraceID:         firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -132,16 +132,16 @@ func TestPiggyBankListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.PiggyBanks.List(context.TODO(), emceesprodtesting5.PiggyBankListParams{
-		Limit:    emceesprodtesting5.Int(10),
-		Page:     emceesprodtesting5.Int(1),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.PiggyBanks.List(context.TODO(), firefly.PiggyBankListParams{
+		Limit:    firefly.Int(10),
+		Page:     firefly.Int(1),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -158,18 +158,18 @@ func TestPiggyBankDeleteWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.PiggyBanks.Delete(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.PiggyBankDeleteParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.PiggyBankDeleteParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -186,20 +186,20 @@ func TestPiggyBankListAttachmentsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.PiggyBanks.ListAttachments(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.PiggyBankListAttachmentsParams{
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.PiggyBankListAttachmentsParams{
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -216,20 +216,20 @@ func TestPiggyBankListEventsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.PiggyBanks.ListEvents(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.PiggyBankListEventsParams{
-			Limit:    emceesprodtesting5.Int(10),
-			Page:     emceesprodtesting5.Int(1),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.PiggyBankListEventsParams{
+			Limit:    firefly.Int(10),
+			Page:     firefly.Int(1),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

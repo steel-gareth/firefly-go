@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,17 +23,17 @@ func TestInsightTransferGetTotalWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Transfer.GetTotal(context.TODO(), emceesprodtesting5.InsightTransferGetTotalParams{
+	_, err := client.Insight.Transfer.GetTotal(context.TODO(), firefly.InsightTransferGetTotalParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -50,17 +50,17 @@ func TestInsightTransferListByAssetAccountWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Transfer.ListByAssetAccount(context.TODO(), emceesprodtesting5.InsightTransferListByAssetAccountParams{
+	_, err := client.Insight.Transfer.ListByAssetAccount(context.TODO(), firefly.InsightTransferListByAssetAccountParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -77,18 +77,18 @@ func TestInsightTransferListByCategoryWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Transfer.ListByCategory(context.TODO(), emceesprodtesting5.InsightTransferListByCategoryParams{
+	_, err := client.Insight.Transfer.ListByCategory(context.TODO(), firefly.InsightTransferListByCategoryParams{
 		End:        time.Now(),
 		Start:      time.Now(),
 		Accounts:   []int64{1, 2, 3},
 		Categories: []int64{1, 2, 3},
-		XTraceID:   emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID:   firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -105,18 +105,18 @@ func TestInsightTransferListByTagWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Transfer.ListByTag(context.TODO(), emceesprodtesting5.InsightTransferListByTagParams{
+	_, err := client.Insight.Transfer.ListByTag(context.TODO(), firefly.InsightTransferListByTagParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
 		Tags:     []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -133,17 +133,17 @@ func TestInsightTransferListWithoutCategoryWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Transfer.ListWithoutCategory(context.TODO(), emceesprodtesting5.InsightTransferListWithoutCategoryParams{
+	_, err := client.Insight.Transfer.ListWithoutCategory(context.TODO(), firefly.InsightTransferListWithoutCategoryParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -160,17 +160,17 @@ func TestInsightTransferListWithoutTagWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Insight.Transfer.ListWithoutTag(context.TODO(), emceesprodtesting5.InsightTransferListWithoutTagParams{
+	_, err := client.Insight.Transfer.ListWithoutTag(context.TODO(), firefly.InsightTransferListWithoutTagParams{
 		End:      time.Now(),
 		Start:    time.Now(),
 		Accounts: []int64{1, 2, 3},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

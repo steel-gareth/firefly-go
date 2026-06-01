@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -22,19 +22,19 @@ func TestTransactionLinkNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.TransactionLinks.New(context.TODO(), emceesprodtesting5.TransactionLinkNewParams{
+	_, err := client.TransactionLinks.New(context.TODO(), firefly.TransactionLinkNewParams{
 		InwardID:     "131",
 		LinkTypeID:   "5",
 		OutwardID:    "131",
-		LinkTypeName: emceesprodtesting5.String("Is paid by"),
-		Notes:        emceesprodtesting5.String("Some example notes"),
-		XTraceID:     emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		LinkTypeName: firefly.String("Is paid by"),
+		Notes:        firefly.String("Some example notes"),
+		XTraceID:     firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -51,18 +51,18 @@ func TestTransactionLinkGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.TransactionLinks.Get(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.TransactionLinkGetParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.TransactionLinkGetParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -79,23 +79,23 @@ func TestTransactionLinkUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.TransactionLinks.Update(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.TransactionLinkUpdateParams{
-			InwardID:     emceesprodtesting5.String("131"),
-			LinkTypeID:   emceesprodtesting5.String("5"),
-			LinkTypeName: emceesprodtesting5.String("Is paid by"),
-			Notes:        emceesprodtesting5.String("Some example notes"),
-			OutwardID:    emceesprodtesting5.String("131"),
-			XTraceID:     emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.TransactionLinkUpdateParams{
+			InwardID:     firefly.String("131"),
+			LinkTypeID:   firefly.String("5"),
+			LinkTypeName: firefly.String("Is paid by"),
+			Notes:        firefly.String("Some example notes"),
+			OutwardID:    firefly.String("131"),
+			XTraceID:     firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -112,16 +112,16 @@ func TestTransactionLinkListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.TransactionLinks.List(context.TODO(), emceesprodtesting5.TransactionLinkListParams{
-		Limit:    emceesprodtesting5.Int(10),
-		Page:     emceesprodtesting5.Int(1),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.TransactionLinks.List(context.TODO(), firefly.TransactionLinkListParams{
+		Limit:    firefly.Int(10),
+		Page:     firefly.Int(1),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -138,18 +138,18 @@ func TestTransactionLinkDeleteWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.TransactionLinks.Delete(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.TransactionLinkDeleteParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.TransactionLinkDeleteParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

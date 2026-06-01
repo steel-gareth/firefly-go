@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -22,14 +22,14 @@ func TestConfigurationGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Configuration.Get(context.TODO(), emceesprodtesting5.ConfigurationGetParams{
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Configuration.Get(context.TODO(), firefly.ConfigurationGetParams{
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -46,18 +46,18 @@ func TestConfigurationGetValueWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Configuration.GetValue(
 		context.TODO(),
-		emceesprodtesting5.ConfigValueFilterConfigurationIsDemoSite,
-		emceesprodtesting5.ConfigurationGetValueParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.ConfigValueFilterConfigurationIsDemoSite,
+		firefly.ConfigurationGetValueParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -74,21 +74,21 @@ func TestConfigurationUpdateValueWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Configuration.UpdateValue(
 		context.TODO(),
-		emceesprodtesting5.ConfigurationUpdateValueParamsNameConfigurationIsDemoSite,
-		emceesprodtesting5.ConfigurationUpdateValueParams{
-			Value: emceesprodtesting5.PolymorphicPropertyUnionParam{
-				OfBool: emceesprodtesting5.Bool(true),
+		firefly.ConfigurationUpdateValueParamsNameConfigurationIsDemoSite,
+		firefly.ConfigurationUpdateValueParams{
+			Value: firefly.PolymorphicPropertyUnionParam{
+				OfBool: firefly.Bool(true),
 			},
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

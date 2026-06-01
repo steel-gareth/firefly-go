@@ -1,4 +1,4 @@
-package emceesprodtesting5
+package firefly
 
 import (
 	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/param"

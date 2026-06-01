@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -21,10 +21,10 @@ func TestUsage(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	response, err := client.Autocomplete.ListAccounts(context.TODO(), emceesprodtesting5.AutocompleteListAccountsParams{})
+	response, err := client.Autocomplete.ListAccounts(context.TODO(), firefly.AutocompleteListAccountsParams{})
 	if err != nil {
 		t.Fatalf("err should be nil: %s", err.Error())
 	}

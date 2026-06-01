@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -22,18 +22,18 @@ func TestAutocompleteListAccountsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListAccounts(context.TODO(), emceesprodtesting5.AutocompleteListAccountsParams{
-		Date:     emceesprodtesting5.String("date"),
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		Types:    []emceesprodtesting5.AccountTypeFilter{emceesprodtesting5.AccountTypeFilterAll},
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListAccounts(context.TODO(), firefly.AutocompleteListAccountsParams{
+		Date:     firefly.String("date"),
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		Types:    []firefly.AccountTypeFilter{firefly.AccountTypeFilterAll},
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -50,16 +50,16 @@ func TestAutocompleteListBillsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListBills(context.TODO(), emceesprodtesting5.AutocompleteListBillsParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListBills(context.TODO(), firefly.AutocompleteListBillsParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -76,16 +76,16 @@ func TestAutocompleteListBudgetsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListBudgets(context.TODO(), emceesprodtesting5.AutocompleteListBudgetsParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListBudgets(context.TODO(), firefly.AutocompleteListBudgetsParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -102,16 +102,16 @@ func TestAutocompleteListCategoriesWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListCategories(context.TODO(), emceesprodtesting5.AutocompleteListCategoriesParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListCategories(context.TODO(), firefly.AutocompleteListCategoriesParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -128,16 +128,16 @@ func TestAutocompleteListCurrenciesWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListCurrencies(context.TODO(), emceesprodtesting5.AutocompleteListCurrenciesParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListCurrencies(context.TODO(), firefly.AutocompleteListCurrenciesParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -154,16 +154,16 @@ func TestAutocompleteListCurrenciesWithCodeWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListCurrenciesWithCode(context.TODO(), emceesprodtesting5.AutocompleteListCurrenciesWithCodeParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListCurrenciesWithCode(context.TODO(), firefly.AutocompleteListCurrenciesWithCodeParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -180,16 +180,16 @@ func TestAutocompleteListObjectGroupsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListObjectGroups(context.TODO(), emceesprodtesting5.AutocompleteListObjectGroupsParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListObjectGroups(context.TODO(), firefly.AutocompleteListObjectGroupsParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -206,16 +206,16 @@ func TestAutocompleteListPiggyBanksWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListPiggyBanks(context.TODO(), emceesprodtesting5.AutocompleteListPiggyBanksParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListPiggyBanks(context.TODO(), firefly.AutocompleteListPiggyBanksParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -232,16 +232,16 @@ func TestAutocompleteListPiggyBanksWithBalanceWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListPiggyBanksWithBalance(context.TODO(), emceesprodtesting5.AutocompleteListPiggyBanksWithBalanceParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListPiggyBanksWithBalance(context.TODO(), firefly.AutocompleteListPiggyBanksWithBalanceParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -258,16 +258,16 @@ func TestAutocompleteListRecurringTransactionsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListRecurringTransactions(context.TODO(), emceesprodtesting5.AutocompleteListRecurringTransactionsParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListRecurringTransactions(context.TODO(), firefly.AutocompleteListRecurringTransactionsParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -284,16 +284,16 @@ func TestAutocompleteListRuleGroupsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListRuleGroups(context.TODO(), emceesprodtesting5.AutocompleteListRuleGroupsParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListRuleGroups(context.TODO(), firefly.AutocompleteListRuleGroupsParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -310,16 +310,16 @@ func TestAutocompleteListRulesWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListRules(context.TODO(), emceesprodtesting5.AutocompleteListRulesParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListRules(context.TODO(), firefly.AutocompleteListRulesParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -336,16 +336,16 @@ func TestAutocompleteListSubscriptionsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListSubscriptions(context.TODO(), emceesprodtesting5.AutocompleteListSubscriptionsParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListSubscriptions(context.TODO(), firefly.AutocompleteListSubscriptionsParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -362,16 +362,16 @@ func TestAutocompleteListTagsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListTags(context.TODO(), emceesprodtesting5.AutocompleteListTagsParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListTags(context.TODO(), firefly.AutocompleteListTagsParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -388,16 +388,16 @@ func TestAutocompleteListTransactionTypesWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListTransactionTypes(context.TODO(), emceesprodtesting5.AutocompleteListTransactionTypesParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListTransactionTypes(context.TODO(), firefly.AutocompleteListTransactionTypesParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -414,16 +414,16 @@ func TestAutocompleteListTransactionsWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListTransactions(context.TODO(), emceesprodtesting5.AutocompleteListTransactionsParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListTransactions(context.TODO(), firefly.AutocompleteListTransactionsParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -440,16 +440,16 @@ func TestAutocompleteListTransactionsWithIDWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Autocomplete.ListTransactionsWithID(context.TODO(), emceesprodtesting5.AutocompleteListTransactionsWithIDParams{
-		Limit:    emceesprodtesting5.Int(0),
-		Query:    emceesprodtesting5.String("query"),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Autocomplete.ListTransactionsWithID(context.TODO(), firefly.AutocompleteListTransactionsWithIDParams{
+		Limit:    firefly.Int(0),
+		Query:    firefly.String("query"),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

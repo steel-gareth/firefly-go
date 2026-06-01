@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package emceesprodtesting5_test
+package firefly_test
 
 import (
 	"context"
@@ -23,38 +23,38 @@ func TestRuleNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Rules.New(context.TODO(), emceesprodtesting5.RuleNewParams{
-		Actions: []emceesprodtesting5.RuleNewParamsAction{{
-			Type:           emceesprodtesting5.RuleActionKeywordSetCategory,
-			Value:          emceesprodtesting5.String("Daily groceries"),
-			Active:         emceesprodtesting5.Bool(true),
-			Order:          emceesprodtesting5.Int(5),
-			StopProcessing: emceesprodtesting5.Bool(false),
+	_, err := client.Rules.New(context.TODO(), firefly.RuleNewParams{
+		Actions: []firefly.RuleNewParamsAction{{
+			Type:           firefly.RuleActionKeywordSetCategory,
+			Value:          firefly.String("Daily groceries"),
+			Active:         firefly.Bool(true),
+			Order:          firefly.Int(5),
+			StopProcessing: firefly.Bool(false),
 		}},
 		RuleGroupID: "81",
 		Title:       "First rule title.",
-		Trigger:     emceesprodtesting5.RuleTriggerTypeStoreJournal,
-		Triggers: []emceesprodtesting5.RuleNewParamsTrigger{{
-			Type:           emceesprodtesting5.RuleTriggerKeywordFromAccountStarts,
+		Trigger:     firefly.RuleTriggerTypeStoreJournal,
+		Triggers: []firefly.RuleNewParamsTrigger{{
+			Type:           firefly.RuleTriggerKeywordFromAccountStarts,
 			Value:          "tag1",
-			Active:         emceesprodtesting5.Bool(true),
-			Order:          emceesprodtesting5.Int(5),
-			Prohibited:     emceesprodtesting5.Bool(false),
-			StopProcessing: emceesprodtesting5.Bool(false),
+			Active:         firefly.Bool(true),
+			Order:          firefly.Int(5),
+			Prohibited:     firefly.Bool(false),
+			StopProcessing: firefly.Bool(false),
 		}},
-		Active:         emceesprodtesting5.Bool(true),
-		Description:    emceesprodtesting5.String("First rule description"),
-		Order:          emceesprodtesting5.Int(5),
-		RuleGroupTitle: emceesprodtesting5.String("New rule group"),
-		StopProcessing: emceesprodtesting5.Bool(false),
-		Strict:         emceesprodtesting5.Bool(true),
-		XTraceID:       emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		Active:         firefly.Bool(true),
+		Description:    firefly.String("First rule description"),
+		Order:          firefly.Int(5),
+		RuleGroupTitle: firefly.String("New rule group"),
+		StopProcessing: firefly.Bool(false),
+		Strict:         firefly.Bool(true),
+		XTraceID:       firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -71,18 +71,18 @@ func TestRuleGetWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Rules.Get(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.RuleGetParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.RuleGetParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -99,40 +99,40 @@ func TestRuleUpdateWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Rules.Update(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.RuleUpdateParams{
-			Actions: []emceesprodtesting5.RuleUpdateParamsAction{{
-				Active:         emceesprodtesting5.Bool(true),
-				Order:          emceesprodtesting5.Int(5),
-				StopProcessing: emceesprodtesting5.Bool(false),
-				Type:           emceesprodtesting5.RuleActionKeywordSetCategory,
-				Value:          emceesprodtesting5.String("Daily groceries"),
+		firefly.RuleUpdateParams{
+			Actions: []firefly.RuleUpdateParamsAction{{
+				Active:         firefly.Bool(true),
+				Order:          firefly.Int(5),
+				StopProcessing: firefly.Bool(false),
+				Type:           firefly.RuleActionKeywordSetCategory,
+				Value:          firefly.String("Daily groceries"),
 			}},
-			Active:         emceesprodtesting5.Bool(true),
-			Description:    emceesprodtesting5.String("First rule description"),
-			Order:          emceesprodtesting5.Int(5),
-			RuleGroupID:    emceesprodtesting5.String("81"),
-			StopProcessing: emceesprodtesting5.Bool(false),
-			Strict:         emceesprodtesting5.Bool(true),
-			Title:          emceesprodtesting5.String("First rule title."),
-			Trigger:        emceesprodtesting5.RuleTriggerTypeStoreJournal,
-			Triggers: []emceesprodtesting5.RuleUpdateParamsTrigger{{
-				Active:         emceesprodtesting5.Bool(true),
-				Order:          emceesprodtesting5.Int(5),
-				StopProcessing: emceesprodtesting5.Bool(false),
-				Type:           emceesprodtesting5.RuleTriggerKeywordFromAccountStarts,
-				Value:          emceesprodtesting5.String("tag1"),
+			Active:         firefly.Bool(true),
+			Description:    firefly.String("First rule description"),
+			Order:          firefly.Int(5),
+			RuleGroupID:    firefly.String("81"),
+			StopProcessing: firefly.Bool(false),
+			Strict:         firefly.Bool(true),
+			Title:          firefly.String("First rule title."),
+			Trigger:        firefly.RuleTriggerTypeStoreJournal,
+			Triggers: []firefly.RuleUpdateParamsTrigger{{
+				Active:         firefly.Bool(true),
+				Order:          firefly.Int(5),
+				StopProcessing: firefly.Bool(false),
+				Type:           firefly.RuleTriggerKeywordFromAccountStarts,
+				Value:          firefly.String("tag1"),
 			}},
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -149,16 +149,16 @@ func TestRuleListWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Rules.List(context.TODO(), emceesprodtesting5.RuleListParams{
-		Limit:    emceesprodtesting5.Int(10),
-		Page:     emceesprodtesting5.Int(1),
-		XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+	_, err := client.Rules.List(context.TODO(), firefly.RuleListParams{
+		Limit:    firefly.Int(10),
+		Page:     firefly.Int(1),
+		XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 	})
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -175,18 +175,18 @@ func TestRuleDeleteWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Rules.Delete(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.RuleDeleteParams{
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+		firefly.RuleDeleteParams{
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -203,21 +203,21 @@ func TestRuleTestWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Rules.Test(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.RuleTestParams{
+		firefly.RuleTestParams{
 			Accounts: []int64{1, 2, 3},
-			End:      emceesprodtesting5.Time(time.Now()),
-			Start:    emceesprodtesting5.Time(time.Now()),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			End:      firefly.Time(time.Now()),
+			Start:    firefly.Time(time.Now()),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -234,21 +234,21 @@ func TestRuleTriggerWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := emceesprodtesting5.NewClient(
+	client := firefly.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.Rules.Trigger(
 		context.TODO(),
 		"123",
-		emceesprodtesting5.RuleTriggerParams{
+		firefly.RuleTriggerParams{
 			Accounts: []int64{1, 2, 3},
-			End:      emceesprodtesting5.Time(time.Now()),
-			Start:    emceesprodtesting5.Time(time.Now()),
-			XTraceID: emceesprodtesting5.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
+			End:      firefly.Time(time.Now()),
+			Start:    firefly.Time(time.Now()),
+			XTraceID: firefly.String("40c71bbb-c676-4f24-83cf-cc725d7d7a00"),
 		},
 	)
 	if err != nil {
-		var apierr *emceesprodtesting5.Error
+		var apierr *firefly.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

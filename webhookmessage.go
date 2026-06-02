@@ -11,11 +11,11 @@ import (
 	"slices"
 	"time"
 
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/apijson"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/requestconfig"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/option"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/param"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/respjson"
+	"github.com/steel-gareth/firefly-go/internal/apijson"
+	"github.com/steel-gareth/firefly-go/internal/requestconfig"
+	"github.com/steel-gareth/firefly-go/option"
+	"github.com/steel-gareth/firefly-go/packages/param"
+	"github.com/steel-gareth/firefly-go/packages/respjson"
 )
 
 // These endpoints can be used to manage the user&#039;s webhooks and triggers them

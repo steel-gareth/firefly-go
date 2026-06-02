@@ -1,7 +1,7 @@
 package sentinel
 
 import (
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/encoding/json/shims"
+	"github.com/steel-gareth/firefly-go/internal/encoding/json/shims"
 	"reflect"
 	"sync"
 )

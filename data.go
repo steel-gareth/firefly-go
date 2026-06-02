@@ -9,10 +9,10 @@ import (
 	"net/url"
 	"slices"
 
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/apiquery"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/requestconfig"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/option"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/param"
+	"github.com/steel-gareth/firefly-go/internal/apiquery"
+	"github.com/steel-gareth/firefly-go/internal/requestconfig"
+	"github.com/steel-gareth/firefly-go/option"
+	"github.com/steel-gareth/firefly-go/packages/param"
 )
 
 // The &quot;data&quot;-endpoints manage generic Firefly III and user-specific

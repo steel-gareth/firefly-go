@@ -1,7 +1,7 @@
 package apijson
 
 import (
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/respjson"
+	"github.com/steel-gareth/firefly-go/packages/respjson"
 	"reflect"
 )
 

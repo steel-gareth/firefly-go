@@ -3,8 +3,8 @@
 package firefly
 
 import (
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/apierror"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/param"
+	"github.com/steel-gareth/firefly-go/internal/apierror"
+	"github.com/steel-gareth/firefly-go/packages/param"
 )
 
 // aliased to make [param.APIUnion] private when embedding

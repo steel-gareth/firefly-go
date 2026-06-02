@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/apijson"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/respjson"
+	"github.com/steel-gareth/firefly-go/internal/apijson"
+	"github.com/steel-gareth/firefly-go/packages/respjson"
 )
 
 // Error represents an error that originates from the API, i.e. when a request is

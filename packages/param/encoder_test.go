@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	shimjson "github.com/stainless-sdks/emcees-prod-testing-5-go/internal/encoding/json"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/param"
+	shimjson "github.com/steel-gareth/firefly-go/internal/encoding/json"
+	"github.com/steel-gareth/firefly-go/packages/param"
 )
 
 type Struct struct {

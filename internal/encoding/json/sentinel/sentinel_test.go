@@ -1,8 +1,8 @@
 package sentinel_test
 
 import (
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/encoding/json/sentinel"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/param"
+	"github.com/steel-gareth/firefly-go/internal/encoding/json/sentinel"
+	"github.com/steel-gareth/firefly-go/packages/param"
 	"reflect"
 	"slices"
 	"testing"

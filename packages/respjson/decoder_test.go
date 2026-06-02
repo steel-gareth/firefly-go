@@ -3,8 +3,8 @@ package respjson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/apijson"
-	rj "github.com/stainless-sdks/emcees-prod-testing-5-go/packages/respjson"
+	"github.com/steel-gareth/firefly-go/internal/apijson"
+	rj "github.com/steel-gareth/firefly-go/packages/respjson"
 	"reflect"
 	"testing"
 )

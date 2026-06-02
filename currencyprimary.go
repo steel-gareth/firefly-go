@@ -10,9 +10,9 @@ import (
 	"net/url"
 	"slices"
 
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/requestconfig"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/option"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/param"
+	"github.com/steel-gareth/firefly-go/internal/requestconfig"
+	"github.com/steel-gareth/firefly-go/option"
+	"github.com/steel-gareth/firefly-go/packages/param"
 )
 
 // Endpoints to manage the currencies in Firefly III. Depending on the user&#039;s

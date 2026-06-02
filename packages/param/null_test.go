@@ -2,7 +2,7 @@ package param_test
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/param"
+	"github.com/steel-gareth/firefly-go/packages/param"
 	"testing"
 )
 

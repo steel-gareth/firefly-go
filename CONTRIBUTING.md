@@ -41,7 +41,7 @@ To use a local version of this library from source in another project, edit the 
 directive. This can be done through the CLI with the following:
 
 ```sh
-$ go mod edit -replace github.com/stainless-sdks/emcees-prod-testing-5-go=/path/to/emcees-prod-testing-5-go
+$ go mod edit -replace github.com/steel-gareth/firefly-go=/path/to/firefly-go
 ```
 
 ## Running tests

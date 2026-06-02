@@ -43,7 +43,7 @@ UPLOAD_RESPONSE=$(curl -v -X PUT \
 
 if echo "$UPLOAD_RESPONSE" | grep -q "HTTP/[0-9.]* 200"; then
   echo -e "\033[32mUploaded build to Stainless storage.\033[0m"
-  echo -e "\033[32mInstallation: Download and unzip: 'https://pkg.stainless.com/s/emcees-prod-testing-5-go/$SHA'. Run 'go mod edit -replace github.com/stainless-sdks/emcees-prod-testing-5-go=/path/to/unzipped_directory'.\033[0m"
+  echo -e "\033[32mInstallation: Download and unzip: 'https://pkg.stainless.com/s/emcees-prod-testing-5-go/$SHA'. Run 'go mod edit -replace github.com/steel-gareth/firefly-go=/path/to/unzipped_directory'.\033[0m"
 else
   echo -e "\033[31mFailed to upload artifact.\033[0m"
   exit 1

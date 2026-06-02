@@ -1,4 +1,4 @@
-module github.com/stainless-sdks/emcees-prod-testing-5-go
+module github.com/steel-gareth/firefly-go
 
 go 1.22
 

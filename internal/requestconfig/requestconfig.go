@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/apierror"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/apiform"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/apiquery"
+	"github.com/steel-gareth/firefly-go/internal"
+	"github.com/steel-gareth/firefly-go/internal/apierror"
+	"github.com/steel-gareth/firefly-go/internal/apiform"
+	"github.com/steel-gareth/firefly-go/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {

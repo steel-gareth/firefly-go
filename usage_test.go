@@ -7,9 +7,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/emcees-prod-testing-5-go"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/testutil"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/option"
+	"github.com/steel-gareth/firefly-go"
+	"github.com/steel-gareth/firefly-go/internal/testutil"
+	"github.com/steel-gareth/firefly-go/option"
 )
 
 func TestUsage(t *testing.T) {

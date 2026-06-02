@@ -9,8 +9,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/internal/requestconfig"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/option"
+	"github.com/steel-gareth/firefly-go/internal/requestconfig"
+	"github.com/steel-gareth/firefly-go/option"
 )
 
 // Client creates a struct with services and top level methods that help with

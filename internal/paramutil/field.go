@@ -1,8 +1,8 @@
 package paramutil
 
 import (
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/param"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/packages/respjson"
+	"github.com/steel-gareth/firefly-go/packages/param"
+	"github.com/steel-gareth/firefly-go/packages/respjson"
 )
 
 func AddrIfPresent[T comparable](v param.Opt[T]) *T {

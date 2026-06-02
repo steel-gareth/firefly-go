@@ -12,8 +12,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/emcees-prod-testing-5-go"
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/option"
+	"github.com/steel-gareth/firefly-go"
+	"github.com/steel-gareth/firefly-go/option"
 )
 
 func TestDataExportExportAccountsWithOptionalParams(t *testing.T) {

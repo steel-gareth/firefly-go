@@ -3,7 +3,7 @@
 package firefly
 
 import (
-	"github.com/stainless-sdks/emcees-prod-testing-5-go/option"
+	"github.com/steel-gareth/firefly-go/option"
 )
 
 // InsightService contains methods and other services that help with interacting

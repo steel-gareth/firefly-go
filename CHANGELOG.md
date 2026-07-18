@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2026-07-18)
+
+Full Changelog: [v0.1.0...v0.2.0](https://github.com/steel-gareth/firefly-go/compare/v0.1.0...v0.2.0)
+
+### Features
+
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([64f494c](https://github.com/steel-gareth/firefly-go/commit/64f494cbd121411a6660cda9f03a62e97ace879f))
+
 ## 0.1.0 (2026-06-02)
 
 Full Changelog: [v0.0.1...v0.1.0](https://github.com/steel-gareth/firefly-go/compare/v0.0.1...v0.1.0)
